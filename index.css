@@ -51,6 +51,77 @@ body {
     cursor: default;
 }
 
+/* intro */
+
+#home {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    width: 100vw;
+
+    color: black;
+
+    overflow: hidden;
+}
+
+/* intro slideshow */
+
+#slideshow {
+    list-style-type: none;
+}
+
+#slideshow li span { 
+    position: absolute;
+
+    width: 100vw;
+    height: 100vh;
+
+    top: 0px;
+    left: 0px;
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    opacity: 0;
+    z-index: -100; /* ilubong sa overall layer */
+    animation: imageAnimation 30s linear infinite 0s; 
+}
+
+/* slideshow images (refer to <li><span>) */
+
+#slideshow li:nth-child(1) span { 
+    background-image: url("assets/img/intro-img/slide1.jpg");
+}
+#slideshow li:nth-child(2) span { 
+    background-image: url("assets/img/intro-img/slide2.jpg");
+    animation-delay: 6s; 
+}
+#slideshow li:nth-child(3) span { 
+    background-image: url("assets/img/intro-img/slide3.jpg");
+    animation-delay: 12s; 
+}
+#slideshow li:nth-child(4) span { 
+    background-image: url("assets/img/intro-img/slide4.jpeg");   
+    animation-delay: 18s; 
+}
+#slideshow li:nth-child(5) span { 
+    background-image: url("https://uploads-ssl.webflow.com/5976a3655fcd654cb3d604ca/5c00c9963ea913260bb41b0e_powerlines.jpg");
+    animation-delay: 24s; 
+}
+
+@keyframes imageAnimation { 
+    0% { opacity: 0; animation-timing-function: ease-in; }
+    8% { opacity: 1; animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
 /* loading class */
 
 .loading {

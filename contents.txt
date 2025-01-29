@@ -10,7 +10,13 @@ contact
 
 custom scrollbar ha!
 
+darker
 background-color: #3c005f;
+lighter
+color: #4f007c;
+
+hover
+background-color: #6600a1;
 
 -------------------------
 
