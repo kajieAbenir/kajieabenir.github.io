@@ -1,0 +1,33 @@
+home
+    - img 100vh 100vw
+about
+reports
+certificates
+portfolio
+attendance summary
+commission
+contact
+
+custom scrollbar ha!
+
+background-color: #3c005f;
+
+-------------------------
+
+1 / 8 / 2025
+TO DO
+HOME.TSX
+    - accomplishment report
+    - virtual certifications
+        - cisco netacad
+        - cisco apjc
+        - mitsumi (after ojt)
+    - daily attendance summary
+    - what i can do (services)
+PROJECTS.TSX
+    - coding projects
+    - sportsfest frame
+    - cite photography club videos
+
+reference : https://gininaba.github.io/ginsan-portfolio.github.io/
+
