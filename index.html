@@ -29,89 +29,139 @@
             - 
         -->
         <main>
+        <div id="main-container">
             <section id="home">
 
-                <ul id="slideshow">
+                <!-- for white bg upon smooth transition -->
+                <div id="home-slideshow-container">
+                <ul id="home-slideshow">
                     <li><span></span></li>
                     <li><span></span></li>
                     <li><span></span></li>
                     <li><span></span></li>
                     <li><span></span></li>
                 </ul>
+                </div>
 
                 <div id="intro-txt">
-                    <h1 class="intro-txt"> brent abenir.</h1>
-                    <h5 class="intro-txt"> digital artist </h5>
+                    <h1> brent abenir</h1>
+                    <!-- changeable upon javascript -->
+                    <p id="person-description"> digital artist </p>
                 </div>
             </section>
 
             <div id="content">
                 <section id="about">
                     <h1> ABOUT ME </h1>
-                    <p>
-                    A student-trainee (OJT) in <em style="font-style: italic;">  MinebeaMitsumi, Inc. - FCB Danao Factory </em>, who is currently taking a Diploma in Computer Engineering (DICE) at <em style="font-weight: bold;"> Center for Industrial Technology and Enterprise (CITE) Technical Institute, Inc. </em>
-                    </p>
+                    <div id="about-content">
+                        <p>
+                        A student-trainee (OJT) in <em style="font-style: italic;">  MinebeaMitsumi, Inc. - FCB Danao Factory </em>, who is currently taking a Diploma in Computer Engineering (DICE) at <strong> Center for Industrial Technology and Enterprise (CITE) Technical Institute, Inc. </strong>
+                        </p>
+                        <img src="assets/img/about-img/img.JPG" alt="brent abenir">
+                    </div>
                 </section>
 
-                <div class="line"></div>
+                <hr>
 
                 <section id="assets">
                     <h1> ASSETS </h1>
 
-                    <div id="resume">
-                        <figure>
-                            <img src="assets/img/reports/resume.jpg" alt="resume preview">
-                            <figcaption> RESUME </figcaption>
-                        </figure>
-                        <a href="assets/pdf/resume.pdf" download>
-                            <button>Download File</button>
-                        </a>
-                    </div>
+                    <div class="for-gradient-bg">
+                    <div class="assets-content">
+                        <section id="resume">
+                            <figure>
+                                <img src="assets/img/assets-img/resume.jpg" alt="resume preview">
+                                <figcaption> RESUME </figcaption>
+                            </figure>
+                            <a href="assets/pdf/resume.pdf" download>
+                                <button>Download File</button>
+                            </a>
+                        </section>
 
-                    <div id="accomplishment">
-                        <figure>
-                            <img src="assets/img/reports/accomplishment.jpg" alt="resume preview">
-                            <figcaption> ACCOMPLISHMENT REPORT </figcaption>
-                        </figure>
-                        <a href="assets/pdf/accomplishment.pdf" download>
-                            <button>Download File</button>
-                        </a>
+                        <section id="accomplishment">
+                            <figure>
+                                <img src="assets/img/assets-img/accomplishment.jpg" alt="accomplishment preview">
+                                <figcaption> ACCOMPLISHMENT REPORT </figcaption>
+                            </figure>
+                            <a href="assets/pdf/accomplishment.pdf" download>
+                                <button>Download File</button>
+                            </a>
+                        </section>
+                    </div>
                     </div>
 
                 </section>
 
-                <div class="line"></div>
+                <hr>
 
                 <section id="certificates">
                     <h1> CERTIFICATES </h1>
-                    <!-- TODO: add certificates 
-                        - apjc
-                        - cisco netacad completion
-                        - 
-                    -->
-                    <div id="apjc">
-                        <figure>
-                            <img src="assets/img/reports/apjc.jpg" alt="netacad apjc certificate">
-                            <figcaption> CISCO 2023 APJC NetAcad Riders </figcaption>
-                        </figure>
-                        <a href="assets/pdf/accomplishment.pdf" download>
-                            <button>Download File</button>
-                        </a>
-                    </div>
+                    
+                    <div class="for-gradient-bg">
+                    <div class="assets-content">
 
-                    <div id="accomplishment">
-                        <figure>
-                            <img src="assets/img/reports/accomplishment.jpg" alt="resume preview">
-                            <figcaption> ACCOMPLISHMENT REPORT </figcaption>
-                        </figure>
-                        <a href="assets/pdf/accomplishment.pdf" download>
-                            <button>Download File</button>
-                        </a>
+                        <!-- certificates:
+                        - APJC
+                        - NETACAD 
+                        - Mitsumi
+                        - EPAS NC2
+                        - CSS NC2
+                        -->
+                        <section id="apjc">
+                            <figure>
+                                <img src="assets/img/certificates-img/apjc.jpg" alt="apjc preview">
+                                <figcaption> APJC 2023 </figcaption>
+                            </figure>
+                            <a href="assets/pdf/apjc.pdf" download>
+                                <button>Download File</button>
+                            </a>
+                        </section>
+
+                        <section id="netacad">
+                            <figure>
+                                <img src="assets/img/certificates-img/netacad.jpg" alt="netacad preview">
+                                <figcaption> NETACAD COMPLETION </figcaption>
+                            </figure>
+                            <a href="assets/pdf/netacad.pdf" download>
+                                <button>Download File</button>
+                            </a>
+                        </section>
+
+                        <section id="mitsumi">
+                            <figure>
+                                <img src="assets/img/certificates-img/mitsumi.jpg" alt="mitsumi certificate preview">
+                                <figcaption> MinebeaMitsumi In-plant Training Certificate of Completion </figcaption>
+                            </figure>
+                            <a href="assets/pdf/mitsumi.pdf" download>
+                                <button>Download File</button>
+                            </a>
+                        </section>
+
+                        <section id="epas">
+                            <figure>
+                                <img src="assets/img/certificates-img/epas.jpg" alt="tesda epas preview">
+                                <figcaption> TESDA - EPAS NCII Certificate </figcaption>
+                            </figure>
+                            <a href="assets/pdf/tesda-epas.pdf" download>
+                                <button>Download File</button>
+                            </a>
+                        </section>
+
+                        <section id="comservicing">
+                            <figure>
+                                <img src="assets/img/certificates-img/css.jpg" alt="tesda css preview">
+                                <figcaption> TESDA - CSS NCII Certificate </figcaption>
+                            </figure>
+                            <a href="assets/pdf/tesda-css.pdf" download>
+                                <button>Download File</button>
+                            </a>
+                        </section>
+                    </div>
                     </div>
 
                 </section>
 
-                <div class="line"></div>
+                <hr>
 
                 <section id="portfolio">
                     <h1> PORTFOLIO </h1>
@@ -124,7 +174,7 @@
                     -->
                 </section>
 
-                <div class="line"></div>
+                <hr>
 
                 <section id="attendance">
                     <h1> ATTENDANCE SUMMARY </h1>
@@ -132,7 +182,7 @@
                     <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSma4KzX4vFDQ75Twm5-OteilHHDBGtIgAqk1P3aDUSW1nj_xVKk33rzRtp5O_Zf9zp2jteUajjjDGt/pubhtml?gid=1399926585&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
                 </section>
 
-                <div class="line"></div>
+                <hr>
 
                 <section id="commission">
                     <h1> COMMISSION </h1>
@@ -141,12 +191,13 @@
                     -->
                 </section>
 
-                <div class="line"></div>
+                <hr>
                 
                 <section id="contact">
                     <!-- mailto: brentabenir.2023@gmail.com -->
                 </section>
             </div>
+        </div>
         </main>
 
         <!--
@@ -156,7 +207,7 @@
             - socmed links
         -->
         <footer>
-
+            contact us. mga kupal.
         </footer>
     </div>
 
