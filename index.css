@@ -86,6 +86,7 @@ button {
     height: 50px;
 
     background-color: #3c005f;
+    border-bottom: 2.5px solid white;
 
     margin: 0 auto;
     position: sticky;
@@ -121,6 +122,7 @@ button {
     padding: 0;
     background-color: white;
     width: 85vw;
+    min-width: 600px;
 }
 
 /* intro */
@@ -283,7 +285,7 @@ button {
     background: linear-gradient(90deg, rgba(255,255,255,1) 10%, rgba(60,0,95,1) 40%, rgba(60,0,95,1) 60%, rgba(255,255,255,1) 90%);
 
     width: 100%;
-    padding: .5% 0;
+    padding-top: .7%;
 
     display: flex;
     flex-wrap: nowrap;
@@ -305,7 +307,7 @@ button {
     text-align: center;
 
     width: 90%;
-    padding: 40px 0;
+    padding-top: 40px;
     background-color: white;
 
     img {
@@ -321,7 +323,47 @@ button {
     }
 }
 
+/* attendance */
 
+#attendance {
+    p {
+        padding: 0;
+    }
+
+    iframe {
+        width: 80%;
+        height: 80vh;
+        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+    }
+}
+
+/* contact */
+
+footer {
+    display: block;
+    color: white;
+    background-color: #3c005f;
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    #socmed-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    address {
+        font-size: 13px;
+    }
+}
 
 /* loading woowoowoo */
 
