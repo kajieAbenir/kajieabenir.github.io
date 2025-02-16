@@ -39,16 +39,21 @@ body {
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
 
+    
+    min-width: 500px;
+}
+
+/* header settings */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Horizon",sans-serif;
+    padding: 20px auto;
 }
 
 h1 {
     font-size: 190%;
     font-weight: bold;
     font-family: "Horizon",sans-serif;
-}
-
-#person-description {
-    font-family: "DIN";
 }
 
 hr {
@@ -71,6 +76,16 @@ button {
     box-shadow: 4px 4px 3px 0 rgba(0,0,0,0.3);
 
     cursor: pointer;
+
+    font-family: 'DIN', sans-serif;
+}
+
+button[disabled] {
+    cursor: default;
+}
+
+button[disabled]:hover {
+    font-weight: 200 !important;
 }
 
 /* no right click and drag to new tab */
@@ -125,7 +140,6 @@ img {
     padding: 0;
     background-color: white;
     width: 85vw;
-    min-width: 600px;
 }
 
 /* intro */
@@ -145,6 +159,10 @@ img {
     overflow: hidden;
 
     background-color: white;
+}
+
+#person-description {
+    font-family: "DIN";
 }
 
 #home-slideshow-container {
@@ -281,6 +299,13 @@ img {
     }
 }
 
+#about address {
+    color: rgb(90, 90, 90);
+    margin-top: -27px;
+    padding-bottom: 20px;
+    font-size: 13px;
+}
+
 /* - - - - - - - - - - */
 /* template: showcase */
 
@@ -309,28 +334,38 @@ img {
 
     text-align: center;
 
-    width: 90%;
+    min-width: 90%;
     padding-top: 20px;
     background-color: white;
 
+    /* to make 3 items fit in one row */
+    > * {
+        flex: 0 0 calc(33.33% - 20px);
+        margin: 5px;
+    }
+
     :hover {
-        background-color: #6600a1;
-        transition: 0.2s linear;
+        background-color: #3a005c;
+        background-image: url('./assets/img/html-bg/webb.png');
+        background-size: 110%;
+        background-blend-mode: overlay;
+
+        
         border-radius: 10px;
 
         figcaption {
             color: white;
+            font-weight: bold;
         }
 
         img {
             border: 2px solid white;
-            cursor: zoom-in;
+            border-radius: 5px;
         }
     }
 
     :hover::after {
         border-radius: 0;
-        transition: 0.2s linear;
     }
 
     button:hover {
@@ -338,6 +373,16 @@ img {
         border-radius: 30px;
         font-weight: bold;
         letter-spacing: 0.2px;
+    }
+
+    
+
+    button {
+        margin-bottom: 5px;
+    }
+
+    button:first-child {
+        margin-bottom: 3px;
     }
 
     img {
@@ -352,11 +397,57 @@ img {
     section {
         padding: 1vh 0;
     }
+
+    figcaption {
+        width: 70%;
+        text-align: center;
+        align-content: center;
+        margin: 0 auto;
+    }
 }
 
 /* certificates IDs */
-#apjc img {
+#certificates img {
+    cursor: zoom-in;
     height: 150px;
+}
+
+/* portfolio */
+#portfolio {
+
+    .assets-content {
+        padding: 0 0;
+        max-width: 70% !important;
+        margin: 0 auto;
+
+        /* to make 4 items fit in one row */
+        > * {
+            flex: 0 0 calc(25% - 20px);
+            margin: 5px;
+        }
+    }
+
+    figcaption {
+        min-width: 80%;
+    }
+
+    a {
+        align-items: center;
+        align-content: center;
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+
+        min-width: 80%;
+        text-decoration: none; /* Ensure no underline on links */
+    }
+
+    button {
+        min-width: 80%;
+        margin: 8px;
+        text-decoration: none; /* Ensure no underline on buttons */
+    }    
 }
 
 /* attendance */
@@ -501,4 +592,20 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
     background: #4f007c; /* color of the scrollbar thumb on hover */
     border-radius: 10px; /* rounded corners */
+}
+
+/* - - - - - - - - - - */
+
+@media screen and (max-width: 800px) {
+    #about-content {
+        flex-direction: column-reverse;
+        align-content: center;
+        align-items: center;
+        align-self: center;
+        text-align: center;
+
+        p {
+            width: 90%;
+        }
+    }
 }

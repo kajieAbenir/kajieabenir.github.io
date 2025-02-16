@@ -4,6 +4,27 @@ about
 reports
 certificates
 portfolio
+[
+
+    portfolio site v1
+        https://github.com/kajieAbenir/portfolio-webpage-02152024
+
+    portfolio site (typescript test)
+        https://github.com/kajieAbenir/portfolio-tsx
+
+    portfolio site v2
+
+
+    sample web calculator
+        https://github.com/kajieAbenir/sample-calculator-04122024
+
+    softdev vivamus
+        https://github.com/kajieAbenir/sd-group-1-06292024
+
+    web-based Date Generator via Q&A
+        https://github.com/kajieAbenir/random-date-generator
+
+]
 attendance summary
 commission
 contact
