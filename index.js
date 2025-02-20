@@ -9,13 +9,13 @@
  * @param {Function} callback - The function to execute once the body element is available.
  */
 function onReady(callback) {
-    var intervalId = window.setInterval(function() {
-      if (document.getElementsByTagName('body')[0] !== undefined) {
-        window.clearInterval(intervalId);
-        callback.call(this);
-      }
-    }, 1000);
-  }
+  var intervalId = window.setInterval(function() {
+    if (document.getElementsByTagName('body')[0] !== undefined) {
+      window.clearInterval(intervalId);
+      callback.call(this);
+    }
+  }, 1000);
+}
   
 
 function setVisible(selector, visible) {
@@ -47,34 +47,30 @@ function clickToFullScreen(imageSrc) {
    * 
    * @returns {void}
    */
-  image.onload = () => {
+  $(image).on('load', () => {
 
     // Create a div with the class 'fullscreen' to hold the full screen image and the close button.
-    const fullScreenDiv = document.createElement('div');
-    fullScreenDiv.className = 'fullscreen';
+    const fullScreenDiv = $('<div>').addClass('fullscreen');
 
     // Create an img element and set its source to the imageSrc parameter.
-    const fullScreenImage = document.createElement('img');
-    fullScreenImage.src = imageSrc;
+    const fullScreenImage = $('<img>').attr('src', imageSrc);
     // Add the img element to the fullScreenDiv.
-    fullScreenDiv.appendChild(fullScreenImage);
+    fullScreenDiv.append(fullScreenImage);
 
     // Create a button with the text 'X' to close the full screen image.
-    const closeButton = document.createElement('button');
-    closeButton.innerText = 'X';
-    closeButton.className = 'close-button';
+    const closeButton = $('<button>').text('X').addClass('close-button');
     // Add the button to the fullScreenDiv.
-    fullScreenDiv.appendChild(closeButton);
+    fullScreenDiv.append(closeButton);
 
     // When the button is clicked, remove the fullScreenDiv from the page.
-    closeButton.addEventListener('click', () => {
-      document.body.removeChild(fullScreenDiv);
+    closeButton.on('click', () => {
+      fullScreenDiv.remove();
     });
 
     // Add the fullScreenDiv to the page.
-    document.body.appendChild(fullScreenDiv);
+    $('body').append(fullScreenDiv);
 
-  };
+  });
 }
 
 // no image function
@@ -90,8 +86,8 @@ function noImageSubstitute() {
   const images = document.querySelectorAll('img');
   images.forEach(image => {
     if (image.complete && image.naturalHeight === 0) {
-      image.src = 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg';
-      image.className = 'no-image';
+      image.src = 'assets/img/wikimedia-noimg-500px.svg';
+      image.classList.add('no-image');
       image.style.cursor = 'default';
 
       // developer note: dapat mu-provide ug cover art para accessible ang source.
@@ -111,5 +107,9 @@ noImageSubstitute();
 onReady(function() {
   setVisible('.page', true);
   setVisible('#loading', false);
+
+  $(document).bind("contextmenu",function(e){
+    e.preventDefault();
+});
 });
 

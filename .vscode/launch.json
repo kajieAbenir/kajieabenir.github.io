@@ -5,13 +5,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Attach to Edge",
-            "port": 9222,
-            "request": "attach",
-            "type": "msedge",
-            "webRoot": "${workspaceFolder}"
-        },
-        {
             "type": "msedge",
             "request": "launch",
             "name": "Open index.html",

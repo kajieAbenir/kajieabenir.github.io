@@ -97,6 +97,12 @@ img {
     -webkit-touch-callout: none;
 }
 
+/* page */
+
+.page {
+    display: none;
+}
+
 /* header */
 
 .header {
@@ -366,6 +372,7 @@ img {
 
     :hover::after {
         border-radius: 0;
+        transition: 0.3s ease-in-out;
     }
 
     button:hover {
@@ -374,8 +381,6 @@ img {
         font-weight: bold;
         letter-spacing: 0.2px;
     }
-
-    
 
     button {
         margin-bottom: 5px;
@@ -447,7 +452,24 @@ img {
         min-width: 80%;
         margin: 8px;
         text-decoration: none; /* Ensure no underline on buttons */
-    }    
+    }
+
+    ul {
+        list-style: none;
+        max-width: 50%;
+        margin: 0 auto;
+        padding: 0;
+        text-align: left;
+    }
+
+    ul li:before {
+        content: "\2022";
+        margin-right: 10px;
+        font-size: 1.5em;
+        line-height: 1em;
+        vertical-align: middle;
+        color: #26003b;
+    }
 }
 
 /* attendance */
@@ -499,13 +521,9 @@ img {
 
 @keyframes fullscreenImgFadeIn {
     0% {
-        width: 60%;
-        height: 60%;
         opacity: 0;
     }
-    90% {
-        width: 80%;
-        height: 80%;
+    80% {
         opacity: 1;
     }
 }
@@ -516,6 +534,15 @@ footer {
     display: block;
     color: white;
     background-color: #3c005f;
+
+    text-align: center;
+
+    #footer-container {
+        width: 80%;
+        margin: 0 auto;
+
+        padding: 10px 0 40px;
+    }
 
     a {
         color: white;
@@ -531,11 +558,21 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin: 0 auto;
+        width: 75%;
+        padding-block: inherit;
+
+        transition: all 0.2s ease-in-out;
     }
 
     address {
         font-size: 13px;
     }
+}
+
+#socmed-container .fa-brands:hover{
+    transition: all 0.2s ease-in-out;
+    letter-spacing: 1.3px;
 }
 
 /* NO IMAGE!!! */
@@ -544,7 +581,7 @@ footer {
     width: 150px !important;
     height: 150px !important;
     border: none !important;
-    box-shadow: none !important; 
+    box-shadow: none !important;
 }
 
 /* loading woowoowoo */
