@@ -458,7 +458,7 @@ img {
         list-style: none;
         max-width: 50%;
         margin: 0 auto;
-        padding: 0;
+        padding-bottom: 15px;
         text-align: left;
     }
 
