@@ -1,5 +1,3 @@
-// loading screen command set. automatic removal once done.
-
 /**
  * Executes a callback function once the DOM is fully loaded and the body element is available.
  *
@@ -108,8 +106,10 @@ onReady(function() {
   setVisible('.page', true);
   setVisible('#loading', false);
 
-  $(document).bind("contextmenu",function(e){
-    e.preventDefault();
-});
-});
+  // purpose : to disable right click
+  // only re-enable when recommended.
 
+  // $(document).bind("contextmenu",function(e){
+  //   e.preventDefault();
+  // });
+});
