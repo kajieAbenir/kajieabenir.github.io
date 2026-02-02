@@ -1,115 +1,80 @@
-/**
- * Executes a callback function once the DOM is fully loaded and the body element is available.
- *
- * This function repeatedly checks for the presence of the body element in the DOM and,
- * upon finding it, clears the interval and executes the provided callback function.
- *
- * @param {Function} callback - The function to execute once the body element is available.
- */
-function onReady(callback) {
-  var intervalId = window.setInterval(function() {
-    if (document.getElementsByTagName('body')[0] !== undefined) {
-      window.clearInterval(intervalId);
-      callback.call(this);
-    }
-  }, 1000);
-}
-  
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. Loading Screen Logic
+    const loader = document.getElementById('loading');
+    setTimeout(() => {
+        loader.style.opacity = '0';
+        setTimeout(() => loader.style.display = 'none', 500);
+    }, 1000); // Slight delay to smooth transition
 
-function setVisible(selector, visible) {
-  const elem = document.querySelector(selector);
-
-  elem.style.transition = 'opacity 0.3s ease-in-out';
-  elem.style.opacity = visible ? '1' : '0';
-  setTimeout(() => elem.style.display = visible ? 'block' : 'none', visible ? 0 : 300);
-}
-
-// fullscreen picture function
-
-/**
- * Creates a full screen image and appends it to the body.
- * The image will be removable by clicking the close button.
- * 
- * @param {string} imageSrc - The source URL of the image to be displayed.
- */
-function clickToFullScreen(imageSrc) {
-
-  // Check if the image exists. If it does not, return without doing anything.
-  var image = new Image();
-  image.src = imageSrc;
-
-  /**
-   * Checks if the image is loaded.
-   * If it is, it creates a div with the class 'fullscreen' to hold the full screen image and the close button.
-   * It also adds an event listener to the close button that removes the full screen image from the page when clicked.
-   * 
-   * @returns {void}
-   */
-  $(image).on('load', () => {
-
-    // Create a div with the class 'fullscreen' to hold the full screen image and the close button.
-    const fullScreenDiv = $('<div>').addClass('fullscreen');
-
-    // Create an img element and set its source to the imageSrc parameter.
-    const fullScreenImage = $('<img>').attr('src', imageSrc);
-    // Add the img element to the fullScreenDiv.
-    fullScreenDiv.append(fullScreenImage);
-
-    // Create a button with the text 'X' to close the full screen image.
-    const closeButton = $('<button>').text('X').addClass('close-button');
-    // Add the button to the fullScreenDiv.
-    fullScreenDiv.append(closeButton);
-
-    // When the button is clicked, remove the fullScreenDiv from the page.
-    closeButton.on('click', () => {
-      fullScreenDiv.remove();
+    // 2. Mobile Navigation Toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navbar = document.getElementById('navbar');
+    
+    navToggle.addEventListener('click', () => {
+        navbar.classList.toggle('open');
+        // Toggle icon between bars and times (X)
+        const icon = navToggle.querySelector('i');
+        if (navbar.classList.contains('open')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-xmark');
+        } else {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        }
     });
 
-    // Add the fullScreenDiv to the page.
-    $('body').append(fullScreenDiv);
+    // Close menu when a link is clicked
+    navbar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navbar.classList.remove('open');
+            navToggle.querySelector('i').classList.add('fa-bars');
+            navToggle.querySelector('i').classList.remove('fa-xmark');
+        });
+    });
 
-  });
-}
+    // 3. Fullscreen Image Logic
+    const modal = document.getElementById('fullscreen-modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeModal = document.querySelector('.close-modal');
 
-// no image function
+    // Attach click event to all elements with class 'zoomable'
+    // This allows us to handle both the wrapper div or specific images
+    document.querySelectorAll('.zoomable').forEach(item => {
+        item.addEventListener('click', function(e) {
+            // Check if the clicked element is the img or the wrapper
+            const targetImg = e.target.tagName === 'IMG' ? e.target : this.querySelector('img');
+            
+            // Get the high-res source from data-full attribute, fallback to src
+            const src = targetImg.getAttribute('data-full') || targetImg.src;
+            
+            modalImg.src = src;
+            modal.classList.add('active');
+        });
+    });
 
-/**
- * Replaces all images that fail to load with a placeholder image.
- * 
- * This is useful when the images are loaded from a source
- * and the source is not available.
- * @returns {void}
- */
-function noImageSubstitute() {
-  const images = document.querySelectorAll('img');
-  images.forEach(image => {
-    if (image.complete && image.naturalHeight === 0) {
-      image.src = 'assets/img/wikimedia-noimg-500px.svg';
-      image.classList.add('no-image');
-      image.style.cursor = 'default';
+    // Close Modal Logic
+    closeModal.addEventListener('click', () => {
+        modal.classList.remove('active');
+        modalImg.src = ''; // Clear src to prevent ghosting
+    });
 
-      // developer note: dapat mu-provide ug cover art para accessible ang source.
-      image.onclick = null;
-    }
-  });
-}
+    // Close on background click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
+    });
 
-// CALLING FUNCTIONS SECTION
+    // 4. Broken Image Handling
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', function() {
+            this.src = 'assets/img/wikimedia-noimg-500px.svg'; // Ensure this file exists
+            this.style.border = '2px dashed red'; // Visual indicator for debug
+            this.parentElement.classList.remove('zoomable'); // Disable zoom for broken images
+        });
+    });
 
-// calling the function onReady upon page load as pre-cursor to main page
-
-// call first this...
-noImageSubstitute();
-
-// then this.
-onReady(function() {
-  setVisible('.page', true);
-  setVisible('#loading', false);
-
-  // purpose : to disable right click
-  // only re-enable when recommended.
-
-  // $(document).bind("contextmenu",function(e){
-  //   e.preventDefault();
-  // });
+    // 5. Disable Context Menu (Right Click) - Optional
+    document.addEventListener('contextmenu', event => event.preventDefault());
 });

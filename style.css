@@ -1,0 +1,346 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    --bg-dark: #1b0029;
+    --primary: #3c005f;
+    --accent: #4f007c;
+    --highlight: #a200ff;
+    --white: #ffffff;
+    --shadow: rgba(0,0,0,0.3);
+    
+    --font-main: 'DIN', sans-serif;
+    --font-header: 'Horizon', sans-serif;
+
+    --bg-img: url('assets/img/html-bg/webb.png');
+}
+
+/* Custom Font Definitions */
+@font-face { font-family: "DIN"; src: url('./assets/fonts/DIN.ttf') format('truetype'); }
+@font-face { font-family: "Horizon"; src: url('./assets/fonts/horizon.otf') format('opentype'); }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--white);
+    color: #333;
+    overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+
+/* =========================================
+   2. UTILITIES & LAYOUT
+   ========================================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background: white;
+}
+
+.section-padding { padding: 60px 0; text-align: center; }
+
+h1, h2, h3 { font-family: var(--font-header); margin-bottom: 20px; }
+.section-title { font-size: 2.5rem; color: var(--primary); }
+.section-subtitle { margin-bottom: 40px; color: #666; }
+
+hr {
+    background-color: var(--accent);
+    height: 3px;
+    width: 80px; /* Changed from 80% to a stylish small line */
+    margin: 40px auto;
+    border: none;
+}
+
+/* =========================================
+   3. COMPONENT: NAVIGATION
+   ========================================= */
+.header {
+    background-color: var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--white);
+    padding: 15px 0;
+}
+
+#navbar {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+#navbar a { color: var(--white); font-weight: 500; font-size: 0.9rem; }
+#navbar a:hover { color: var(--highlight); text-decoration: underline; }
+
+/* Mobile Menu Toggle */
+#nav-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1001;
+    background: var(--white);
+    border: 2px solid var(--primary);
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* =========================================
+   4. COMPONENT: HERO SLIDESHOW
+   ========================================= */
+#home {
+    position: relative;
+    height: 40vh; /* Taller hero section */
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    z-index: 10;
+    text-align: center;
+    color: var(--white);
+    text-shadow: 2px 2px 4px black;
+}
+
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 0; }
+.hero-content p { font-size: 1.5rem; letter-spacing: 0.2rem; }
+
+.slideshow-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+.slideshow li span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: imageAnimation 30s linear infinite;
+}
+
+/* Keep your existing nth-child logic here, it was fine */
+.slideshow li:nth-child(1) span { background-image: url("assets/img/intro-img/slide1.jpg"); }
+.slideshow li:nth-child(2) span { background-image: url("assets/img/intro-img/slide2.jpg"); animation-delay: 6s; }
+.slideshow li:nth-child(3) span { background-image: url("assets/img/intro-img/slide3.jpg"); animation-delay: 12s; }
+.slideshow li:nth-child(4) span { background-image: url("assets/img/intro-img/slide4.jpeg"); animation-delay: 18s; }
+.slideshow li:nth-child(5) span { background-image: url("https://uploads-ssl.webflow.com/5976a3655fcd654cb3d604ca/5c00c9963ea913260bb41b0e_powerlines.jpg"); animation-delay: 24s; }
+
+@keyframes imageAnimation { 
+    0% { opacity: 0; animation-timing-function: ease-in; }
+    8% { opacity: 1; animation-timing-function: ease-out; }
+    17% { opacity: 1; }
+    25% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* =========================================
+   5. COMPONENT: ABOUT GRID
+   ========================================= */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+    align-items: center;
+    text-align: left;
+    margin-top: 20px;
+    box-shadow: 0 0 10px var(--shadow);
+    padding: 20px;
+    border-radius: 10px;
+
+    background-image: var(--bg-img);
+    background-color: var(--primary);
+    color: var(--white);
+    background-blend-mode: overlay;
+}
+
+.about-text p { font-size: 1.1rem; line-height: 1.8; }
+.about-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 5px solid var(--bg-dark);
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+/* =========================================
+   6. COMPONENT: CARD GRID (Assets/Certs)
+   ========================================= */
+.card-grid {
+    display: grid;
+    /* MAGIC: This creates responsive columns automatically */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px;
+    padding: 20px;
+}
+
+.card {
+    background: var(--primary);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow);
+    transition: transform 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.card-image {
+    height: 200px;
+    overflow: hidden;
+    background: var(--bg-dark);
+    background-image: var(--bg-img);
+    background-blend-mode: overlay;
+
+    cursor: zoom-in;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Prevents cropping */
+    padding: 10px;
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Pushes button to bottom */
+    flex-grow: 1;
+}
+
+.card-content h3 { font-size: 1rem; margin-bottom: 15px; }
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background: var(--white);
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover { background: var(--primary); color: var(--white); }
+.btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+
+/* =========================================
+   7. COMPONENT: PORTFOLIO & MASONRY
+   ========================================= */
+.masonry-grid {
+    column-count: 3;
+    column-gap: 20px;
+    padding: 20px;
+}
+
+.masonry-grid img {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    cursor: zoom-in;
+    box-shadow: 0 4px 6px var(--shadow);
+    transition: 0.3s;
+}
+
+.masonry-grid img:hover { opacity: 0.8; }
+
+/* =========================================
+   8. COMPONENT: FOOTER
+   ========================================= */
+footer {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 50px 0;
+    text-align: center;
+}
+
+.social-links {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-links a { font-size: 1.2rem; display: flex; align-items: center; gap: 8px; }
+.social-links a:hover { transform: scale(1.1); }
+
+/* =========================================
+   9. COMPONENT: MODALS & LOADING
+   ========================================= */
+.fullscreen {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 2000;
+    display: flex; justify-content: center; align-items: center;
+    opacity: 0; pointer-events: none; transition: 0.3s;
+}
+
+.fullscreen.active { opacity: 1; pointer-events: all; }
+.fullscreen img { max-width: 90%; max-height: 90%; box-shadow: 0 0 20px black; }
+.close-modal {
+    position: absolute; top: 30px; right: 30px;
+    background: white; border: none; width: 40px; height: 40px;
+    font-size: 20px; cursor: pointer; border-radius: 50%;
+}
+
+#loading {
+    position: fixed; inset: 0; background: var(--bg-dark); z-index: 9999;
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.5s;
+}
+
+.spinner {
+    width: 50px; height: 50px;
+    border: 5px solid var(--white); border-top-color: var(--accent);
+    border-radius: 50%; animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* =========================================
+   10. MEDIA QUERIES (Mobile Responsiveness)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    #nav-toggle { display: block; }
+    
+    #navbar {
+        position: fixed; top: 0; right: 0;
+        height: 100vh; width: 70%;
+        background: var(--primary);
+        flex-direction: column;
+        padding-top: 60px;
+        transform: translateX(100%);
+        transition: 0.3s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    }
+    
+    #navbar.open { transform: translateX(0); }
+
+    #home { height: 30vh; }
+    
+    .hero-content h1 { font-size: 2rem; }
+    
+    .about-grid { grid-template-columns: 1fr; text-align: center; }
+    .about-image { order: -1; margin-bottom: 20px; }
+    
+    .masonry-grid { column-count: 2; }
+    .social-links { flex-direction: column; gap: 15px; }
+}
+
+@media screen and (max-width: 480px) {
+    .masonry-grid { column-count: 1; }
+}
