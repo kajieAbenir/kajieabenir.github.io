@@ -76,5 +76,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // 5. Disable Context Menu (Right Click) - Optional
-    document.addEventListener('contextmenu', event => event.preventDefault());
+    // document.addEventListener('contextmenu', event => event.preventDefault());
 });
