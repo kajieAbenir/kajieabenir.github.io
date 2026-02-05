@@ -130,7 +130,7 @@ hr {
 .slideshow li:nth-child(1) span { background-image: url("assets/img/intro-img/slide1.jpg"); }
 .slideshow li:nth-child(2) span { background-image: url("assets/img/intro-img/slide2.jpg"); animation-delay: 6s; }
 .slideshow li:nth-child(3) span { background-image: url("assets/img/intro-img/slide3.jpg"); animation-delay: 12s; }
-.slideshow li:nth-child(4) span { background-image: url("assets/img/intro-img/slide4.jpeg"); animation-delay: 18s; }
+.slideshow li:nth-child(4) span { background-image: url("assets/img/intro-img/slide4.jpg"); animation-delay: 18s; }
 .slideshow li:nth-child(5) span { background-image: url("https://uploads-ssl.webflow.com/5976a3655fcd654cb3d604ca/5c00c9963ea913260bb41b0e_powerlines.jpg"); animation-delay: 24s; }
 
 @keyframes imageAnimation { 
@@ -156,7 +156,7 @@ hr {
     border-radius: 10px;
 
     background-image: var(--bg-img);
-    background-color: var(--primary);
+    background-color: var(--bg-dark);
     color: var(--white);
     background-blend-mode: overlay;
 }
@@ -235,17 +235,13 @@ hr {
     cursor: pointer;
 }
 
-.btn:hover { background: var(--primary); color: var(--white); }
+.btn:hover { background: var(--primary); color: var(--white); border-color: white; }
 .btn[disabled] { opacity: 0.5; cursor: not-allowed; }
 
 /* =========================================
    7. COMPONENT: PORTFOLIO & MASONRY
    ========================================= */
-.masonry-grid {
-    column-count: 3;
-    column-gap: 20px;
-    padding: 20px;
-}
+.masonry-grid { column-count: 3; padding: 20px; }
 
 .masonry-grid img {
     width: 100%;
