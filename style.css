@@ -42,17 +42,17 @@ ul { list-style: none; }
     background: white;
 }
 
-.section-padding { padding: 60px 0; text-align: center; }
+.section-padding { padding: 40px 0; text-align: center; }
 
-h1, h2, h3 { font-family: var(--font-header); margin-bottom: 20px; }
+h1, h2, h3 { font-family: var(--font-header); margin-bottom: 15px; }
 .section-title { font-size: 2.5rem; color: var(--primary); }
-.section-subtitle { margin-bottom: 40px; color: #666; }
+.section-subtitle { margin-bottom: 25px; color: #666; }
 
 hr {
     background-color: var(--accent);
     height: 3px;
     width: 80px; /* Changed from 80% to a stylish small line */
-    margin: 40px auto;
+    margin: 30px auto;
     border: none;
 }
 
@@ -161,7 +161,7 @@ hr {
     background-blend-mode: overlay;
 }
 
-.about-text p { font-size: 1.1rem; line-height: 1.8; }
+.about-text p { font-size: 1.1rem; line-height: 1.6; }
 .about-image img {
     width: 250px;
     height: 250px;
@@ -178,8 +178,8 @@ hr {
     display: grid;
     /* MAGIC: This creates responsive columns automatically */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 30px;
-    padding: 20px;
+    gap: 20px;
+    padding: 15px;
 }
 
 .card {
@@ -241,11 +241,11 @@ hr {
 /* =========================================
    7. COMPONENT: PORTFOLIO & MASONRY
    ========================================= */
-.masonry-grid { column-count: 3; padding: 20px; }
+.masonry-grid { column-count: 3; padding: 10px; }
 
 .masonry-grid img {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     border-radius: 5px;
     cursor: zoom-in;
     box-shadow: 0 4px 6px var(--shadow);
@@ -255,6 +255,24 @@ hr {
 .masonry-grid img:hover { opacity: 0.8; }
 
 .masonry-grid.design-grid { column-count: 5; }
+
+/* Individual Design Grid Layouts */
+#sportsfest-grid { column-count: 5; }
+#cpc-design-grid { column-count: 3; }
+#archer-photo-grid { column-count: 1; }
+#coscard-grid { column-count: 4; }
+
+#other-design-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+#other-design-grid img {
+    width: 220px; /* Matches the approximate width of items in your 5-column grids */
+    margin-bottom: 0; /* Resets the masonry margin to use flex gap instead */
+}
 
 iframe {
     width: 100%;
@@ -271,15 +289,15 @@ iframe {
 footer {
     background-color: var(--primary);
     color: var(--white);
-    padding: 50px 0;
+    padding: 40px 0;
     text-align: center;
 }
 
 .social-links {
-    margin: 20px 0;
+    margin: 15px 0;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 25px;
 }
 
 .social-links a { font-size: 1.2rem; align-items: center; gap: 8px; }

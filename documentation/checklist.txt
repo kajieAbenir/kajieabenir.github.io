@@ -1,14 +1,29 @@
-images checklist
+checklist
+-----
 
-ok resume
-ok accomplishment report
+ok - resume
+ok - accomplishment report
 
-- apjc
-- netacad completion
+ok - apjc
+ok - netacad completion
 - in plant certificate
 - epas nc2
 - css nc2
+- animation nc2
 
-important!!
+important!! images must be lowres
 
-- images must be lowres
+------
+
+checklist update - jun 2026
+
+general
+- update education status
+- update update date (release date)
+- upload mitsumi ctc
+
+designs
+- change "Miscellaneous Designs" to "Designing - Cosplay" (tentative?)
+- add separate highlight for recent "Archer" cover photo editing
+- add separate highlight for cosplay card (coscard) "commission" (kunohay)
+- html visual fixes (everything is too spacey)

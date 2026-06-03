@@ -10,15 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
     /* --------------------------------------------------------------------
      * 1. LOADING SCREEN / SPLASH FADE-OUT
      * ------------------------------------------------------------------ */
-    const loader = document.getElementById('loading');      // Overlay element
-    /* We create a two-step fade:
-     *   1) Lower opacity after 1 s            (smooth transition)
-     *   2) Remove from the layout after 0.5 s (so it’s not clickable)
-     */
-    setTimeout(() => {
-        loader.style.opacity = '0';                         // start fade
-        setTimeout(() => loader.style.display = 'none', 500); // remove node
-    }, 2000); // 2 second delay to give browsers time to render initial visuals
+    const loader = document.getElementById('loading');
+    
+    // Function to hide loader
+    const hideLoader = () => {
+        loader.style.opacity = '0';
+        setTimeout(() => loader.style.display = 'none', 500);
+    };
+
+    // Hide loader after 2s max, or immediately if window is already loaded
+    window.addEventListener('load', hideLoader);
+    setTimeout(hideLoader, 2000); // Fallback timeout
 
     /* --------------------------------------------------------------------
      * 2. MOBILE NAVIGATION TOGGLER  (hamburger ⇄ close icon)
