@@ -75,7 +75,7 @@ hr {
 }
 
 #navbar a { color: var(--white); font-weight: 500; font-size: 0.9rem; }
-#navbar a:hover { color: var(--highlight); text-decoration: underline; }
+#navbar a:hover { background-color: var(--highlight); font-weight: 600; }
 
 /* Mobile Menu Toggle */
 #nav-toggle {
@@ -373,6 +373,12 @@ footer {
     .social-links { flex-direction: column; gap: 15px; }
 
     .masonry-grid.design-grid { column-count: 2; }
+
+    /* Mobile-specific grid layouts */
+    #sportsfest-grid { column-count: 2; }
+    #cpc-design-grid { column-count: 2; }
+    #coscard-grid { column-count: 2; }
+    #archer-photo-grid { column-count: 1; }
 }
 
 @media screen and (max-width: 480px) {

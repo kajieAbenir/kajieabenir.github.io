@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('img').forEach(img => {
         img.addEventListener('error', function () {
             this.src = 'assets/img/wikimedia-noimg-500px.svg'; // fallback
-            this.style.border = '2px dashed red';              // visual debug
+            this.style.border = '1px solid white';              // visual debug
             this.parentElement.classList.remove('zoomable');   // disable zoom
         });
     });
