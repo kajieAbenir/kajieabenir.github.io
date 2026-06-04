@@ -1,9 +1,3 @@
-/* ---------------------------------------------------------------------------
- * MAIN CLIENT-SIDE SCRIPT
- * The whole file runs once the DOM is fully parsed (DOMContentLoaded).
- * Each numbered section below groups a distinct piece of UI/UX behavior.
- * ------------------------------------------------------------------------ */
-
 // Wait until the DOM tree is fully constructed before touching it.
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -105,25 +99,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* --------------------------------------------------------------------
-     * 5. (OPTIONAL) DISABLE RIGHT-CLICK CONTEXT MENU
-     *
-     * Uncomment the line below if you wish to reduce casual image saving.
-     * Keep in mind this is UX-unfriendly and trivial to bypass.
-     * ------------------------------------------------------------------ */
-    // document.addEventListener('contextmenu', event => event.preventDefault());
-
 });
-
-// // Save scroll position before leaving
-// window.addEventListener('beforeunload', () => {
-//   sessionStorage.setItem('scrollPos', window.scrollY);
-// });
-
-// // Restore scroll position when returning
-// window.addEventListener('load', () => {
-//   const scrollPos = sessionStorage.getItem('scrollPos');
-//   if (scrollPos) {
-//     window.scrollTo(0, parseInt(scrollPos));
-//   }
-// });
