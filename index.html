@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brent Abenir | Portfolio</title>
     <link rel="icon" href="public/favicon.png" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- font awesome - icons (includes brands) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <!-- devicon - developer icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,6 +30,7 @@
             <a href="#attendance">Attendance</a>
             <a href="#contact">Contact</a>
         </nav>
+        <!-- upcoming update: separate by "code" and "art" -->
     </header>
 
     <main>
@@ -50,7 +54,7 @@
             <section id="about" class="section-padding">
                 <small class="update-tag">Update: 04-Jun-2026</small>
                 <br>
-                <code>v2026.06.04</code>
+                <code>v2026.07.12</code>
                 <h2 class="section-title">About Me</h2>
                 
                 <div class="about-grid">
@@ -58,6 +62,9 @@
                         <h2>BRENT KYRJEH L. ABENIR</h2>
                         <p>
                             Upcoming graduate from <i>CITE Technical Institute, Inc.</i>, soon holding a <strong>Diploma in Computer Engineering (DICE)</strong>. 
+                        </p>
+                        <br>
+                        <p>
                             Passionate about the intersection of technology and design, and combining technical expertise with a creativity to build and design impactful digital assets.
                         </p>
                     </div>
@@ -65,36 +72,95 @@
                         <img src="assets/img/about-img/img.JPG" alt="Brent Abenir">
                     </div>
                 </div>
-            </section>
 
-            <hr>
-
-            <section id="assets" class="section-padding">
-                <h2 class="section-title">Assets</h2>
-                <p class="section-subtitle">Get to know me more. Downloadable essential resources for your employee search.</p>
-
-                <div class="card-grid">
-                    <div class="card">
-                        <div class="card-image zoomable">
-                            <img src="assets/img/assets-img/resume.jpg" data-full="assets/img/assets-img/resume.jpg" alt="Resume">
+                <!-- Specialties & Tech Stack -->
+                <div class="specialties-container">
+                    <h3 class="subsection-title">Tech Stack & Specialties</h3>
+                    <p class="section-subtitle">A showcase of the programming languages, software, and creative tools I work with.</p>
+                    
+                    <div class="specialties-grid">
+                        <div class="specialties-category">
+                            <h4>Coding & Engineering</h4>
+                            <div class="tech-grid">
+                                <div class="tech-card">
+                                    <div class="tech-icon-group">
+                                        <i class="devicon-html5-plain colored"></i>
+                                        <i class="devicon-css3-plain colored"></i>
+                                        <i class="devicon-javascript-plain colored"></i>
+                                    </div>
+                                    <span>HTML, CSS & JS</span>
+                                </div>
+                                <div class="tech-card">
+                                    <i class="devicon-typescript-plain colored"></i>
+                                    <span>TypeScript</span>
+                                </div>
+                                <div class="tech-card">
+                                    <i class="devicon-c-plain colored"></i>
+                                    <span>C Language</span>
+                                </div>
+                                <div class="tech-card">
+                                    <div class="tech-icon-group">
+                                        <i class="devicon-git-plain colored"></i>
+                                        <i class="devicon-github-original"></i>
+                                    </div>
+                                    <span>Git + Github</span>
+                                </div>
+                                <div class="tech-card">
+                                    <i class="devicon-cloudflare-plain colored"></i>
+                                    <span>Cloudflare Pages</span>
+                                </div>
+                                <div class="tech-card">
+                                    <div class="tech-icon-group">
+                                        <i class="devicon-php-plain colored"></i>
+                                        <i class="devicon-mysql-plain"></i>
+                                    </div>
+                                    <span>PHP + MySQL</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-content">
-                            <h3>RESUME</h3>
-                            <h5>update: Feb. 1, 2026</h5>
-                            <br>
-                            <a href="https://drive.google.com/file/d/1V_rw2RcQZvRMWBu_ZGVzhqI3h6TJbhA7/view?usp=drive_link" class="btn">Download File</a>
+                        
+                        <div class="specialties-category">
+                            <h4>Graphics & Creative</h4>
+                            <div class="tech-grid">
+                                <div class="tech-card">
+                                    <i class="devicon-photoshop-plain"></i>
+                                    <span>Adobe Photoshop</span>
+                                </div>
+                                <div class="tech-card">
+                                    <i class="devicon-premierepro-plain"></i>
+                                    <span>Adobe Premiere Pro</span>
+                                </div>
+                                <div class="tech-card">
+                                    <i class="fa-solid fa-scissors"></i>
+                                    <span>CapCut</span>
+                                </div>
+                                <div class="tech-card">
+                                    <i class="devicon-canva-original"></i>
+                                    <span>Canva</span>
+                                </div>
+                                <div class="tech-card">
+                                    <i class="fa-solid fa-video"></i>
+                                    <span>OBS Studio</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="card">
-                        <div class="card-image zoomable">
-                            <img src="assets/img/assets-img/accomplishment.jpg" data-full="assets/img/assets-img/accomplishment.jpg" alt="Report">
-                        </div>
-                        <div class="card-content">
-                            <h3>IN-PLANT TRAINING ACCOMPLISHMENT REPORT</h3>
-                            <h5>MinebeaMitsumi, Inc. - FCB Danao</h5>
-                            <br>
-                            <a href="https://docs.google.com/document/d/1wP15dEOYg2UX_2gxlMMF94k4MKDkptB4iFpJmFLvwWU/edit?usp=sharing" class="btn">Download File</a>
+                        <div class="specialties-category">
+                            <h4>AI-Assisted Workflow</h4>
+                            <div class="tech-grid">
+                                <div class="tech-card">
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                    <span>Claude AI</span>
+                                </div>
+                                <div class="tech-card">
+                                    <i class="fa-brands fa-openai"></i>
+                                    <span>ChatGPT / Codex</span>
+                                </div>
+                                <div class="tech-card">
+                                    <i class="fa-brands fa-google"></i>
+                                    <span>Google Antigravity</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -102,74 +168,113 @@
 
             <hr>
 
-            <section id="certificates" class="section-padding">
-                <h2 class="section-title">Certificates</h2>
-                <p class="section-subtitle">A showcase on my past experiences and achievements. Please click the images to expand.</p>
+            <section id="credentials-section" class="section-padding">
+                <h2 class="section-title">Credentials & Assets</h2>
+                
+                <div class="tab-control" data-tab-group="credentials">
+                    <button class="tab-btn active" data-tab-target="#assets">Essential Assets</button>
+                    <button class="tab-btn" data-tab-target="#certificates">Certificates</button>
+                </div>
 
-                <div class="card-grid certificate-grid">
-                    <div class="card">
-                        <div class="card-image zoomable">
-                            <img src="assets/img/assets-img/apjc.png" data-full="assets/img/certificates-img/apjc-2023.png" alt="APJC 2023">
-                        </div>
-                        <div class="card-content">
-                            <h3>APJC NETACAD RIDERS 2023</h3>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-image zoomable">
-                            <img src="assets/img/assets-img/ensa.jpg" data-full="assets/img/certificates-img/ensa-2024.jpg" alt="NETACAD">
-                        </div>
-                        <div class="card-content">
-                            <h3>NETACAD COMPLETION</h3>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-image zoomable">
-                            <img src="assets/img/assets-img/completion.jpg" data-full="assets/img/certificates-img/mitsumi-ctc-2025.jpg" alt="MinebeaMitsumi CTC">
-                        </div>
-                        <div class="card-content">
-                            <h3>MinebeaMitsumi Cebu, Inc. Certificate of Training Completion</h3>
-                        </div>
-                    </div>
-
-                    <!-- TO BE EDITED SOON -->
-                    <!-- please note lang gyud ;-; -->
-
-                    <div class="card">
-                        <div class="card-image zoomable">
-                            <img src="assets/img/assets-img/minebea.jpg" data-full="assets/img/certificates-img/minebea-2024.jpg" alt="TESDA CSS NCII">
-                        </div>
-                        <div class="card-content">
-                            <h3>
-                                TESDA COMPUTER SYSTEMS SERVICING (CSS) NCII
-                            </h3>
+                <div class="tab-content-container">
+                    <!-- Tab Pane 1: Assets -->
+                    <div class="tab-pane active" id="assets">
+                        <p class="section-subtitle">Get to know me more. Downloadable essential resources for your employee search.</p>
+                        <div class="card-grid">
+                            <div class="card">
+                                <div class="card-image zoomable">
+                                    <img src="assets/img/assets-img/resume.jpg" data-full="assets/img/assets-img/resume.jpg" alt="Resume">
+                                </div>
+                                <div class="card-content">
+                                    <h3>RESUME</h3>
+                                    <h5>update: Feb. 1, 2026</h5>
+                                    <br>
+                                    <a href="https://drive.google.com/file/d/1xEUBmEJBSe4HSfq70XguVXnkW-VxRLEA/view?usp=sharing" class="btn">Download File</a>
+                                </div>
+                            </div>
+        
+                            <div class="card">
+                                <div class="card-image zoomable">
+                                    <img src="assets/img/assets-img/accomplishment.jpg" data-full="assets/img/assets-img/accomplishment.jpg" alt="Report">
+                                </div>
+                                <div class="card-content">
+                                    <h3>IN-PLANT TRAINING ACCOMPLISHMENT REPORT</h3>
+                                    <h5>MinebeaMitsumi, Inc. - FCB Danao</h5>
+                                    <br>
+                                    <a href="https://docs.google.com/document/d/1wP15dEOYg2UX_2gxlMMF94k4MKDkptB4iFpJmFLvwWU/edit?usp=sharing" class="btn">Download File</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-image zoomable">
-                            <img src="assets/img/assets-img/minebea.jpg" data-full="assets/img/certificates-img/minebea-2024.jpg" alt="TESDA EPAS NCII">
-                        </div>
-                        <div class="card-content">
-                            <h3>
-                                TESDA ELECTRONIC PRODUCT ASSEMBLY AND SERVICING (EPAS) NCII
-                            </h3>
+                    <!-- Tab Pane 2: Certificates -->
+                    <div class="tab-pane" id="certificates">
+                        <p class="section-subtitle">A showcase on my past experiences and achievements. Please click the images to expand.</p>
+                        <div class="card-grid certificate-grid">
+                            <div class="card">
+                                <div class="card-image zoomable">
+                                    <img src="assets/img/assets-img/apjc.png" data-full="assets/img/certificates-img/apjc-2023.png" alt="APJC 2023">
+                                </div>
+                                <div class="card-content">
+                                    <h3>APJC NETACAD RIDERS 2023</h3>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-image zoomable">
+                                    <img src="assets/img/assets-img/ensa.jpg" data-full="assets/img/certificates-img/ensa-2024.jpg" alt="NETACAD">
+                                </div>
+                                <div class="card-content">
+                                    <h3>NETACAD COMPLETION</h3>
+                                </div>
+                            </div>
+        
+                            <div class="card">
+                                <div class="card-image zoomable">
+                                    <img src="assets/img/assets-img/completion.jpg" data-full="assets/img/certificates-img/mitsumi-ctc-2025.jpg" alt="MinebeaMitsumi CTC">
+                                </div>
+                                <div class="card-content">
+                                    <h3>MinebeaMitsumi Cebu, Inc. Certificate of Training Completion</h3>
+                                </div>
+                            </div>
+        
+                            <!-- TO BE EDITED SOON -->
+                            <!-- please note lang gyud ;-; -->
+        
+                            <div class="card">
+                                <div class="card-image zoomable">
+                                    <img src="assets/img/assets-img/minebea.jpg" data-full="assets/img/certificates-img/minebea-2024.jpg" alt="TESDA CSS NCII">
+                                </div>
+                                <div class="card-content">
+                                    <h3>
+                                        TESDA COMPUTER SYSTEMS SERVICING (CSS) NCII
+                                    </h3>
+                                </div>
+                            </div>
+        
+                            <div class="card">
+                                <div class="card-image zoomable">
+                                    <img src="assets/img/assets-img/minebea.jpg" data-full="assets/img/certificates-img/minebea-2024.jpg" alt="TESDA EPAS NCII">
+                                </div>
+                                <div class="card-content">
+                                    <h3>
+                                        TESDA ELECTRONIC PRODUCT ASSEMBLY AND SERVICING (EPAS) NCII
+                                    </h3>
+                                </div>
+                            </div>
+        
+                            <div class="card">
+                                <div class="card-image zoomable">
+                                    <img src="assets/img/assets-img/minebea.jpg" data-full="assets/img/certificates-img/minebea-2024.jpg" alt="TESDA ANIM NCIII">
+                                </div>
+                                <div class="card-content">
+                                    <h3>
+                                        TESDA ANIMATION NCIII
+                                    </h3>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="card">
-                        <div class="card-image zoomable">
-                            <img src="assets/img/assets-img/minebea.jpg" data-full="assets/img/certificates-img/minebea-2024.jpg" alt="TESDA ANIM NCIII">
-                        </div>
-                        <div class="card-content">
-                            <h3>
-                                TESDA ANIMATION NCIII
-                            </h3>
-                        </div>
-                    </div>
-                    
                 </div>
             </section>
 
@@ -178,199 +283,255 @@
             <section id="portfolio" class="section-padding">
                 <h2 class="section-title">Portfolio</h2>
                 
-                <h3 class="subsection-title">GITHUB Projects</h3>
-                <div class="card-grid portfolio-grid">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="assets/img/code-project-img/portfolio-v3-feb2026.PNG" alt="Portfolio Page Current">
-                        </div>
-                        <div class="card-content">
-                            <h3>Portfolio Page</h3>
-                            <h5><i>Tech Stack: Native (HTML, CSS, Babel JS)</i></h5>
-                            <br>
-                            <div class="btn-group">
-                                <a href="https://github.com/kajieAbenir/portfolio-tsx" class="btn sm outline">
-                                    Code (v2 React JS)
-                                </a>
-                                <a href="https://github.com/kajieAbenir/kajieabenir.github.io" class="btn sm outline">
-                                    Code (v3.0 Static)
-                                </a>
+                <div class="tab-control" data-tab-group="portfolio">
+                    <button class="tab-btn active" data-tab-target="#portfolio-latest">Latest Coding</button>
+                    <button class="tab-btn" data-tab-target="#portfolio-past">Past Coding</button>
+                    <button class="tab-btn" data-tab-target="#portfolio-designs">Graphic Designs</button>
+                </div>
+
+                <div class="tab-content-container">
+                    <!-- Tab Pane 1: Latest Coding Projects -->
+                    <div class="tab-pane active" id="portfolio-latest">
+                        <h3 class="subsection-title">Latest Coding Projects</h3>
+                        <div class="card-grid portfolio-grid">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="assets/img/code-project-img/portfolio-v3-feb2026.PNG" alt="Portfolio Page Current">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Portfolio Page</h3>
+                                    <h5><i>Tech Stack: Native (HTML, CSS, Babel JS)</i></h5>
+                                    <br>
+                                    <div class="btn-group">
+                                        <a class="btn sm outline" disabled title="You're looking at it now, silly~">
+                                            View
+                                        </a>
+                                        <a href="https://github.com/kajieAbenir/kajieabenir.github.io" class="btn sm outline">
+                                            Code (v3.0 Native)
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="assets/img/code-project-img/genshin-chat.png" alt="Genshin Chat Simulator">
+                                </div>
+                                <div class="card-content">
+                                    <h3>GENSHIN CHAT SIMULATOR</h3>
+                                    <h5>An ongoing project for creating hilarious imaginary chats with your favorite Genshin Impact characters.</h5>
+                                    <br>
+                                    <h5><i>Tech Stack: Native (HTML, CSS, Babel JS)</i></h5>
+                                    <br>
+                                    <div class="btn-group">
+                                        <a class="btn sm" href="https://gi-chat.pages.dev">
+                                            View Website
+                                        </a>
+                                        <a href="https://github.com/kajieAbenir/genshin-chat" class="btn sm outline">
+                                            Code (ver 1.1)
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="assets/img/code-project-img/login-with.PNG" alt="login with...?">
+                                </div>
+                                <div class="card-content">
+                                    <h3>LOGIN WITH...?</h3>
+                                    <h5>The most <i>normal</i> login page with the most questionable security checkpoints.</h5>
+                                    <h5><i>Tech Stack: Native (HTML, CSS, Babel JS)</i></h5>
+                                    <br>
+                                    <div class="btn-group">
+                                        <a href="https://htmlpreview.github.io/?https://github.com/kajieAbenir/login-with-1-16-2026/blob/master/index.html" class="btn sm">
+                                            View
+                                        </a>
+                                        <a href="https://github.com/kajieAbenir/login-with" class="btn sm outline">
+                                            Code
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="assets/img/code-project-img/year-progress-bar.PNG" alt="Yearly Progress Bar">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Yearly Progress Bar</h3>
+                                    <h5>202X is now at...</h5>
+                                    <h5><i>Tech Stack: Native (HTML, CSS, & JS)</i></h5>
+                                    <br>
+                                    <div class="btn-group">
+                                        <a href="https://htmlpreview.github.io/?https://github.com/kajieAbenir/year-progress-bar/blob/main/index.html" class="btn sm">
+                                            View
+                                        </a>
+                                        <a href="https://github.com/kajieAbenir/year-progress-bar" class="btn sm outline">
+                                            Code
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="assets/img/code-project-img/genshin-chat.png" alt="Genshin Chat Simulator">
-                        </div>
-                        <div class="card-content">
-                            <h3>GENSHIN CHAT SIMULATOR</h3>
-                            <h5>An ongoing project perfect for creating hilarious imaginary chats with your favorite characters.</h5>
-                            <br>
-                            <h5><i>Tech Stack: Native (HTML, CSS, Babel JS)</i></h5>
-                            <br>
-                            <div class="btn-group">
-                                <a class="btn sm" disabled title="In progress...">
-                                    View
-                                </a>
-                                <a href="https://github.com/kajieAbenir/genshin-chat" class="btn sm outline">
-                                    Code
-                                </a>
+                    <!-- Tab Pane 2: Past Coding Projects -->
+                    <div class="tab-pane" id="portfolio-past">
+                        <h3 class="subsection-title">Past Coding Projects</h3>
+                        <h5>Applications you can recreate for <strong>learning purposes</strong>.</h5>
+                        <div class="card-grid portfolio-grid">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="assets/img/code-project-img/portfolio-v1.PNG" alt="Portfolio Legacy">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Portfolio Legacy</h3>
+                                    <h5>The legacy, "academic speedrun" version. Humble beginnings.</h5>
+                                    <h5><i>Tech Stack: Native (HTML, CSS, Babel JS)</i></h5>
+                                    <br>
+                                    <div class="btn-group">
+                                        <a href="https://github.com/kajieAbenir/portfolio-webpage-02152024" class="btn sm outline">
+                                            Code (v1 Legacy Native)
+                                        </a>
+                                        <a href="https://github.com/kajieAbenir/portfolio-tsx" class="btn sm outline">
+                                            Code (v2 Legacy TSX)
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="assets/img/code-project-img/c-gacha.png" alt="C-Based Simple Gacha Simulator">
+                                </div>
+                                <div class="card-content">
+                                    <h3>C-Based Simple Gacha Simulator</h3>
+                                    <h5>LET'S GO GAMBLING!</h5>
+                                    <h6>Seriously, please don't.</h6>
+                                    <br>
+                                    <h5><i>Tech Stack: CLang (C)</i></h5>
+                                    <br>
+                                    <div class="btn-group">
+                                        <a href="https://github.com/kajieAbenir/c-gacha-simulator" class="btn sm outline">
+                                            Code
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="assets/img/code-project-img/c-collatz.png" alt="C-Based Collatz Conjecture Simulator">
+                                </div>
+                                <div class="card-content">
+                                    <h3>C-Based Collatz Conjecture Simulator</h3>
+                                    <h5>Four, two, one, four, two... why is this on loop?</h5>
+                                    <br>
+                                    <h5><i>Tech Stack: CLang (C)</i></h5>
+                                    <br>
+                                    <div class="btn-group">
+                                        <a 
+                                            href="https://github.com/kajieAbenir/collatz-conjecture-simulation" 
+                                            class="btn sm outline"
+                                        >
+                                            Code
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="assets/img/code-project-img/html-calendar.PNG" alt="Portfolio V1">
+                                </div>
+                                <div class="card-content">
+                                    <h3>HTML Calendar</h3>
+                                    <h5>A simple web-based calendar.</h5>
+                                    <h5><i>Tech Stack: Native (HTML, CSS, Babel JS)</i></h5>
+                                    <br>
+                                    <div class="btn-group">
+                                        <a href="https://htmlpreview.github.io/?https://github.com/kajieAbenir/html-simple-calendar-01312024/blob/main/01-January2024.html" class="btn sm outline">
+                                            View
+                                        </a>
+                                        <a href="https://github.com/kajieAbenir/html-simple-calendar-01312024" class="btn sm outline">
+                                            Code
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="assets/img/code-project-img/date-generator.PNG" alt="Portfolio V1">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Destiny Predictor</h3>
+                                    <h5>Note: For entertainment purposes only.</h5>
+                                    <h5><i>Tech Stack: Native (HTML, CSS, Babel JS)</i></h5>
+                                    <br>
+                                    <div class="btn-group">
+                                        <a href="https://htmlpreview.github.io/?https://github.com/kajieAbenir/random-date-generator/blob/main/index.html" class="btn sm outline">
+                                            View
+                                        </a>
+                                        <a href="https://github.com/kajieAbenir/random-date-generator" class="btn sm outline">
+                                            Code
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://github.com/user-attachments/assets/2291bf4d-3677-4e56-9d88-541f676dbe0d" alt="login with...?">
+                    <!-- Tab Pane 3: Designs -->
+                    <div class="tab-pane" id="portfolio-designs">
+                        <h3 class="subsection-title">Designs</h3>
+                        <h5>Click on each picture to zoom in.</h5>
+                        <br>
+                        <h4>CITE Sportsfest 2024 - Facebook Profile Frame Blast</h4>
+                        <div class="masonry-grid design-grid" id="sportsfest-grid">
+                            <img src="assets/img/cpc-img/sportsfest/com-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/sample.png" alt="Sportsfest Com.E Frame Blast Design">
+                            <img src="assets/img/cpc-img/sportsfest/mech-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/mech-frame.png" alt="Sportsfest Mech.E Frame Blast Design">
+                            <img src="assets/img/cpc-img/sportsfest/elec-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/elec-frame.png" alt="Sportsfest Elec.E Frame Blast Design">
+                            <img src="assets/img/cpc-img/sportsfest/elex-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/elex-frame.png" alt="Sportsfest Elex.E Frame Blast Design">
+                            <img src="assets/img/cpc-img/sportsfest/general-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/general-frame.png" alt="Sportsfest General Frame Blast Design">
                         </div>
-                        <div class="card-content">
-                            <h3>LOGIN WITH...?</h3>
-                            <h5>The most <i>normal</i> login page with the most questionable security checkpoints.</h5>
-                            <h5><i>Tech Stack: Native (HTML, CSS, Babel JS)</i></h5>
-                            <br>
-                            <div class="btn-group">
-                                <a href="https://htmlpreview.github.io/?https://github.com/kajieAbenir/login-with-1-16-2026/blob/master/index.html" class="btn sm">
-                                    View
-                                </a>
-                                <a href="https://github.com/kajieAbenir/login-with" class="btn sm outline">
-                                    Code
-                                </a>
-                            </div>
+                        <br>
+                        <h4>CITE Photography Club Announcements & Infographics</h4>
+                        <div class="masonry-grid design-grid" id="cpc-design-grid">
+                            <img src="assets/img/cpc-img/alumni-basket-sample.png" class="zoomable" data-full="assets/img/cpc-img/alumni-basket-sample.png" alt="CITE Alumni Basketball Design">
+                            <img src="assets/img/cpc-img/holy week 2025.png" class="zoomable" data-full="assets/img/cpc-img/holy week 2025.png" alt="CPC Holy Week 2025 Design">
+                            <img src="assets/img/cpc-img/v-day dress.jpg" class="zoomable" data-full="assets/img/cpc-img/v-day dress.jpg" alt="CPC Valentine's Day Dress Design">
+                            <img src="assets/img/cpc-img/jaun congrats.png" class="zoomable" data-full="assets/img/cpc-img/jaun congrats.png" alt="CPC Jaun Congrats Design">
                         </div>
-                    </div>
-                </div>
-                <h3 class="subsection-title">Beginner Coding Projects</h3>
-                <h5>Applications you can try to recreate for learning.</h5>
-                <div class="card-grid portfolio-grid">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="assets/img/code-project-img/portfolio-v1.PNG" alt="Portfolio Legacy">
+                        <br>
+                        <h4>FB Cover Photo Commission - Archer / Shirou Emiya</h4>
+                        <h5> Concept Designs </h5>
+                        <div class="masonry-grid design-grid" id="archer-photo-grid">
+                            <img src="assets/img/zyrusz-img/archer-highlight-img/watermarked d1.png" class="zoomable" data-full="assets/img/zyrusz-img/archer-highlight-img/watermarked d1.png" alt="Archer Cover Design Concept 1">
+                            <img src="assets/img/zyrusz-img/archer-highlight-img/watermarked d2.png" class="zoomable" data-full="assets/img/zyrusz-img/archer-highlight-img/watermarked d2.png" alt="Archer Cover Design Concept 2">
                         </div>
-                        <div class="card-content">
-                            <h3>Portfolio Legacy</h3>
-                            <h5>The legacy, "academic speedrun" version. Humble beginnings.</h5>
-                            <h5><i>Tech Stack: Native (HTML, CSS, Babel JS)</i></h5>
-                            <br>
-                            <div class="btn-group">
-                                <a class="btn sm outline" disabled title="No. Please don't.">
-                                    View
-                                </a>
-                                <a href="https://github.com/kajieAbenir/portfolio-webpage-02152024" class="btn sm outline">
-                                    Code (v1 Legacy)
-                                </a>
-                            </div>
+                        <br>
+                        <h4>Cosplay Card Designing</h4>
+                        <div class="masonry-grid design-grid" id="coscard-grid">
+                            <img src="assets/img/zyrusz-img/coscard-img/aven front.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/aven front.png" alt="Aven Cosplay Card Front">
+                            <img src="assets/img/zyrusz-img/coscard-img/aven back.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/aven back.png" alt="Aven Cosplay Card Back">
+                            <img src="assets/img/zyrusz-img/coscard-img/dr ratio front.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/dr ratio front.png" alt="Dr. Ratio Cosplay Card Front">
+                            <img src="assets/img/zyrusz-img/coscard-img/dr ratio back.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/dr ratio back.png" alt="Dr. Ratio Cosplay Card Back">
+                            <img src="assets/img/zyrusz-img/coscard-img/thoma front.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/thoma front.png" alt="Thoma Cosplay Card Front">
+                            <img src="assets/img/zyrusz-img/coscard-img/thoma back.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/thoma back.png" alt="Thoma Cosplay Card Back">
+                            <img src="assets/img/zyrusz-img/coscard-img/bk_abenir FRONT.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/bk_abenir FRONT.png" alt="Bk_Abenir Image Card Front">
+                            <img src="assets/img/zyrusz-img/coscard-img/bk_abenir BACK.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/bk_abenir BACK.png" alt="Bk_Abenir Image Card Back">
                         </div>
-                        
-                    </div>
-
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="assets/img/code-project-img/c-gacha.png" alt="Portfolio V1">
-                        </div>
-                        <div class="card-content">
-                            <h3>C-Based Simple Gacha Simulator</h3>
-                            <h5>LET'S GO GAMBLING!</h5>
-                            <h6>Seriously, please don't.</h6>
-                            <br>
-                            <h5><i>Tech Stack: CLang (C)</i></h5>
-                            <br>
-                            <div class="btn-group">
-                                <a href="https://github.com/kajieAbenir/c-gacha-simulator" class="btn sm outline">
-                                    Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="assets/img/code-project-img/html-calendar.PNG" alt="Portfolio V1">
-                        </div>
-                        <div class="card-content">
-                            <h3>HTML Calendar</h3>
-                            <h5>A simple web-based calendar.</h5>
-                            <h5><i>Tech Stack: Native (HTML, CSS, Babel JS)</i></h5>
-                            <br>
-                            <div class="btn-group">
-                                <a href="https://htmlpreview.github.io/?https://github.com/kajieAbenir/html-simple-calendar-01312024/blob/main/01-January2024.html" class="btn sm outline">
-                                    View
-                                </a>
-                                <a href="https://github.com/kajieAbenir/html-simple-calendar-01312024" class="btn sm outline">
-                                    Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="assets/img/code-project-img/date-generator.PNG" alt="Portfolio V1">
-                        </div>
-                        <div class="card-content">
-                            <h3>Destiny Predictor</h3>
-                            <h5>Note: For entertainment purposes only.</h5>
-                            <h5><i>Tech Stack: Native (HTML, CSS, Babel JS)</i></h5>
-                            <br>
-                            <div class="btn-group">
-                                <a href="https://htmlpreview.github.io/?https://github.com/kajieAbenir/random-date-generator/blob/main/index.html" class="btn sm outline">
-                                    View
-                                </a>
-                                <a href="https://github.com/kajieAbenir/random-date-generator" class="btn sm outline">
-                                    Code
-                                </a>
-                            </div>
+                        <br>
+                        <h4>Other Designs</h4>
+                        <div class="masonry-grid design-grid" id="other-design-grid">
+                            <img src="assets/img/zyrusz-img/pasabuy-sale.png" class="zoomable" data-full="assets/img/zyrusz-img/pasabuy-sale.png" alt="Genshin POPMART Figurine Pasabuy Sale Design">
+                            <img src="assets/img/zyrusz-img/thoma-sale.png" class="zoomable" data-full="assets/img/zyrusz-img/thoma-sale.png" alt="Thoma Cosplay Sale Design">
+                            <img src="assets/img/zyrusz-img/veritas-sale.png" class="zoomable" data-full="assets/img/zyrusz-img/veritas-sale.png" alt="Veritas Cosplay Sale Design">
                         </div>
                     </div>
                 </div>
-                <h3 class="subsection-title">
-                    Designs
-                </h3>
-                <h5>Click on each picture to zoom in.</h5>
-                <br>
-                <h4>CITE Sportsfest 2024 - Facebook Profile Frame Blast</h4>
-                <div class="masonry-grid design-grid" id="sportsfest-grid">
-                    <img src="assets/img/cpc-img/sportsfest/com-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/sample.png" alt="Sportsfest Com.E Frame Blast Design">
-                    <img src="assets/img/cpc-img/sportsfest/mech-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/mech-frame.png" alt="Sportsfest Mech.E Frame Blast Design">
-                    <img src="assets/img/cpc-img/sportsfest/elec-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/elec-frame.png" alt="Sportsfest Elec.E Frame Blast Design">
-                    <img src="assets/img/cpc-img/sportsfest/elex-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/elex-frame.png" alt="Sportsfest Elex.E Frame Blast Design">
-                    <img src="assets/img/cpc-img/sportsfest/general-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/general-frame.png" alt="Sportsfest General Frame Blast Design">
-                </div>
-                <br>
-                <h4>CITE Photography Club Announcements & Infographics</h4>
-                <div class="masonry-grid design-grid" id="cpc-design-grid">
-                    <img src="assets/img/cpc-img/alumni-basket-sample.png" class="zoomable" data-full="assets/img/cpc-img/alumni-basket-sample.png" alt="CITE Alumni Basketball Design">
-                    <img src="assets/img/cpc-img/holy week 2025.png" class="zoomable" data-full="assets/img/cpc-img/holy week 2025.png" alt="CPC Holy Week 2025 Design">
-                    <img src="assets/img/cpc-img/v-day dress.jpg" class="zoomable" data-full="assets/img/cpc-img/v-day dress.jpg" alt="CPC Valentine's Day Dress Design">
-                    <img src="assets/img/cpc-img/jaun congrats.png" class="zoomable" data-full="assets/img/cpc-img/jaun congrats.png" alt="CPC Jaun Congrats Design">
-                </div>
-                <br>
-                <h4>FB Cover Photo Commission - Archer / Shirou Emiya</h4>
-                <h5> Concept Designs </h5>
-                <div class="masonry-grid design-grid" id="archer-photo-grid">
-                    <img src="assets/img/zyrusz-img/archer-highlight-img/watermarked d1.png" class="zoomable" data-full="assets/img/zyrusz-img/archer-highlight-img/watermarked d1.png" alt="Archer Cover Design Concept 1">
-                    <img src="assets/img/zyrusz-img/archer-highlight-img/watermarked d2.png" class="zoomable" data-full="assets/img/zyrusz-img/archer-highlight-img/watermarked d2.png" alt="Archer Cover Design Concept 2">
-                </div>
-                <br>
-                <h4>Cosplay Card Designing</h4>
-                <div class="masonry-grid design-grid" id="coscard-grid">
-                    <img src="assets/img/zyrusz-img/coscard-img/aven front.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/aven front.png" alt="Aven Cosplay Card Front">
-                    <img src="assets/img/zyrusz-img/coscard-img/aven back.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/aven back.png" alt="Aven Cosplay Card Back">
-                    <img src="assets/img/zyrusz-img/coscard-img/dr ratio front.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/dr ratio front.png" alt="Dr. Ratio Cosplay Card Front">
-                    <img src="assets/img/zyrusz-img/coscard-img/dr ratio back.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/dr ratio back.png" alt="Dr. Ratio Cosplay Card Back">
-                    <img src="assets/img/zyrusz-img/coscard-img/thoma front.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/thoma front.png" alt="Thoma Cosplay Card Front">
-                    <img src="assets/img/zyrusz-img/coscard-img/thoma back.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/thoma back.png" alt="Thoma Cosplay Card Back">
-                    <img src="assets/img/zyrusz-img/coscard-img/bk_abenir FRONT.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/bk_abenir FRONT.png" alt="Bk_Abenir Image Card Front">
-                    <img src="assets/img/zyrusz-img/coscard-img/bk_abenir BACK.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/bk_abenir BACK.png" alt="Bk_Abenir Image Card Back">
-                </div>
-                <br>
-                <h4>Other Designs</h4>
-                <div class="masonry-grid design-grid" id="other-design-grid">
-                    <img src="assets/img/zyrusz-img/pasabuy-sale.png" class="zoomable" data-full="assets/img/zyrusz-img/pasabuy-sale.png" alt="Genshin POPMART Figurine Pasabuy Sale Design">
-                    <img src="assets/img/zyrusz-img/thoma-sale.png" class="zoomable" data-full="assets/img/zyrusz-img/thoma-sale.png" alt="Thoma Cosplay Sale Design">
-                    <img src="assets/img/zyrusz-img/veritas-sale.png" class="zoomable" data-full="assets/img/zyrusz-img/veritas-sale.png" alt="Veritas Cosplay Sale Design">
-                </div>
-
             </section>
 
             <hr>

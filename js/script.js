@@ -97,6 +97,70 @@ document.addEventListener("DOMContentLoaded", () => {
             this.style.border = '1px solid white';              // visual debug
             this.parentElement.classList.remove('zoomable');   // disable zoom
         });
+
+        // Handle images that already failed before this listener was attached
+        if (img.complete && img.naturalWidth === 0 && img.src !== '') {
+            img.src = 'assets/img/wikimedia-noimg-500px.svg'; // fallback
+            img.style.border = '1px solid white';
+            img.parentElement.classList.remove('zoomable');
+        }
     });
+
+    /* --------------------------------------------------------------------
+     * 5. TAB SWITCHER LOGIC
+     * Handles switching active states for buttons and panes, and updates
+     * viewport focus seamlessly.
+     * ------------------------------------------------------------------ */
+    const tabControls = document.querySelectorAll('.tab-control');
+    tabControls.forEach(control => {
+        const buttons = control.querySelectorAll('.tab-btn');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetSelector = btn.getAttribute('data-tab-target');
+                const targetPane = document.querySelector(targetSelector);
+                
+                if (targetPane) {
+                    // Deactivate all buttons in this tab group
+                    buttons.forEach(b => b.classList.remove('active'));
+                    // Deactivate all panes in the related container
+                    const parentContainer = targetPane.parentElement;
+                    const panes = parentContainer.querySelectorAll('.tab-pane');
+                    panes.forEach(pane => pane.classList.remove('active'));
+                    
+                    // Activate this button & pane
+                    btn.classList.add('active');
+                    targetPane.classList.add('active');
+                }
+            });
+        });
+    });
+
+    // Auto-switch tabs based on URL Hash for direct navbar links navigation
+    const checkHashAndSwitchTabs = () => {
+        const hash = window.location.hash;
+        if (!hash) return;
+        
+        // Find if any tab pane matches the hash
+        const targetPane = document.querySelector(hash);
+        if (targetPane && targetPane.classList.contains('tab-pane')) {
+            // Find corresponding tab button
+            const targetBtn = document.querySelector(`.tab-btn[data-tab-target="${hash}"]`);
+            if (targetBtn) {
+                // Click it to trigger the tab switch logic
+                targetBtn.click();
+                
+                // Scroll to the parent section wrapper so user sees the section title
+                const parentSection = targetPane.closest('section');
+                if (parentSection) {
+                    parentSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+    };
+
+    // Run on initial load and when hash changes
+    window.addEventListener('hashchange', checkHashAndSwitchTabs);
+    // Add a slight delay to allow the loading screen to fade out first
+    setTimeout(checkHashAndSwitchTabs, 300);
 
 });
