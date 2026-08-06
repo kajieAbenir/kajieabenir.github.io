@@ -2,12 +2,20 @@
    1. VARIABLES & RESET
    ========================================= */
 :root {
-    --bg-dark: #1b0029;
-    --primary: #3c005f;
-    --accent: #4f007c;
-    --highlight: #a200ff;
+    /* Blue theme — change these tokens to recolor the whole site. */
+    --bg-dark: #000033;
+    --primary: #000055;
+    --accent: #0019b3;
+    --highlight: #2f63ff;
     --white: #ffffff;
+    --text: #1c1c2e;
+    --text-muted: #5f6075;
     --shadow: rgba(0,0,0,0.3);
+    --primary-subtle: rgba(0, 0, 85, 0.06);
+    --primary-border-subtle: rgba(0, 0, 85, 0.12);
+    --primary-shadow: rgba(0, 0, 85, 0.25);
+    --highlight-subtle: rgba(47, 99, 255, 0.15);
+    --highlight-glow: rgba(47, 99, 255, 0.4);
     
     --font-main: 'DIN', sans-serif;
     --font-header: 'Horizon', sans-serif;
@@ -21,11 +29,32 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--highlight) var(--primary-subtle);
+}
+
 body {
     font-family: var(--font-main);
     background-color: var(--white);
-    color: #333;
+    color: var(--text);
     overflow-x: hidden;
+}
+
+a, button {
+    outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+.tab-btn:focus-visible,
+.btn:focus-visible,
+.carousel-btn:focus-visible,
+.close-modal:focus-visible,
+#nav-toggle:focus-visible {
+    outline: 3px solid var(--highlight);
+    outline-offset: 3px;
 }
 
 img { max-width: 100%; display: block; }
@@ -46,7 +75,7 @@ ul { list-style: none; }
 
 h1, h2, h3 { font-family: var(--font-header); margin-bottom: 15px; }
 .section-title { font-size: 2.5rem; color: var(--primary); }
-.section-subtitle { margin-bottom: 25px; color: #666; }
+.section-subtitle { margin-bottom: 25px; color: var(--text-muted); }
 
 hr {
     background-color: var(--accent);
@@ -76,6 +105,38 @@ hr {
 
 #navbar a { color: var(--white); font-weight: 500; font-size: 0.9rem; }
 #navbar a:hover { background-color: var(--highlight); font-weight: 600; }
+#navbar a.active { font-weight: 700; border-bottom: 2px solid var(--highlight); padding-bottom: 2px; }
+
+/* Back to top button */
+#back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 48px;
+    height: 48px;
+    background: var(--highlight);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 1100;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+#back-to-top:hover {
+    background: var(--accent);
+}
 
 /* Mobile Menu Toggle */
 #nav-toggle {
@@ -257,10 +318,95 @@ hr {
 .masonry-grid.design-grid { column-count: 5; }
 
 /* Individual Design Grid Layouts */
-#sportsfest-grid { column-count: 5; }
 #cpc-design-grid { column-count: 3; }
 #archer-photo-grid { column-count: 1; }
-#coscard-grid { column-count: 4; }
+
+.image-carousel {
+    --carousel-visible-items: 1;
+    --carousel-gap: 16px;
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+}
+
+.carousel-visible-2 { --carousel-visible-items: 2; }
+.carousel-visible-3 { --carousel-visible-items: 3; }
+.carousel-visible-4 { --carousel-visible-items: 4; }
+.carousel-visible-5 { --carousel-visible-items: 5; }
+
+.carousel-viewport {
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    gap: var(--carousel-gap);
+    transition: transform 0.35s ease;
+    will-change: transform;
+}
+
+.carousel-item {
+    flex: 0 0 calc((100% - (var(--carousel-gap) * (var(--carousel-visible-items) - 1))) / var(--carousel-visible-items));
+}
+
+.carousel-item img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: zoom-in;
+    box-shadow: 0 4px 6px var(--shadow);
+    transition: opacity 0.3s;
+}
+
+.carousel-image img {
+    aspect-ratio: 1 / 1;
+}
+
+.coscard-pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--carousel-gap);
+}
+
+.coscard-pair img {
+    aspect-ratio: 2 / 3;
+}
+
+.carousel-item img:hover {
+    opacity: 0.8;
+}
+
+.carousel-btn {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+.carousel-btn[disabled] {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.carousel-btn[disabled]:hover {
+    background: var(--white);
+    color: var(--primary);
+}
 
 #other-design-grid {
     display: flex;
@@ -342,7 +488,7 @@ footer {
 .specialties-container {
     margin-top: 50px;
     padding-top: 30px;
-    border-top: 2px dashed rgba(60, 0, 95, 0.1);
+    border-top: 2px dashed var(--primary-border-subtle);
 }
 
 .specialties-container .subsection-title {
@@ -431,9 +577,9 @@ footer {
 
 .tech-card:hover {
     transform: translateY(-5px);
-    background: rgba(162, 0, 255, 0.15);
+    background: var(--highlight-subtle);
     border-color: var(--highlight);
-    box-shadow: 0 0 10px rgba(162, 0, 255, 0.4);
+    box-shadow: 0 0 10px var(--highlight-glow);
 }
 
 .tech-card:hover i {
@@ -466,14 +612,14 @@ footer {
 }
 
 .tab-btn:hover {
-    background: rgba(60, 0, 95, 0.05);
+    background: var(--primary-subtle);
 }
 
 .tab-btn.active {
     background: var(--primary);
     color: var(--white);
     border-color: var(--primary);
-    box-shadow: 0 4px 8px rgba(60, 0, 95, 0.25);
+    box-shadow: 0 4px 8px var(--primary-shadow);
 }
 
 .tab-pane {
@@ -537,13 +683,69 @@ footer {
     .masonry-grid.design-grid { column-count: 2; }
 
     /* Mobile-specific grid layouts */
-    #sportsfest-grid { column-count: 2; }
     #cpc-design-grid { column-count: 2; }
-    #coscard-grid { column-count: 2; }
     #archer-photo-grid { column-count: 1; }
+
+    .carousel-mobile-visible-1 { --carousel-visible-items: 1; }
+    .carousel-mobile-visible-2 { --carousel-visible-items: 2; }
+    .carousel-mobile-visible-3 { --carousel-visible-items: 3; }
+
+    .image-carousel {
+        grid-template-columns: 38px minmax(0, 1fr) 38px;
+        gap: 8px;
+        padding: 10px 0;
+    }
+
+    .carousel-btn {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--primary-subtle);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--highlight);
+    border-radius: 999px;
+    border: 3px solid var(--primary-subtle);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+body::-webkit-scrollbar-corner {
+    background: var(--primary-subtle);
 }
 
 @media screen and (max-width: 480px) {
     .masonry-grid { column-count: 1; }
     .tab-btn { width: 100%; text-align: center; }
+
+    .image-carousel {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .carousel-viewport {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .carousel-btn-prev {
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: end;
+    }
+
+    .carousel-btn-next {
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: start;
+    }
 }

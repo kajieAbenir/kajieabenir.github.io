@@ -12,9 +12,17 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => loader.style.display = 'none', 500);
     };
 
-    // Hide loader after 2s max, or immediately if window is already loaded
-    window.addEventListener('load', hideLoader);
-    setTimeout(hideLoader, 2000); // Fallback timeout
+    // Hide loader only after all images finish loading.
+    const images = Array.from(document.querySelectorAll('img'));
+    const allImagesLoaded = Promise.all(images.map(img => new Promise(resolve => {
+        if (img.complete) {
+            return resolve();
+        }
+        img.addEventListener('load', resolve, { once: true });
+        img.addEventListener('error', resolve, { once: true });
+    })));
+
+    allImagesLoaded.then(hideLoader);
 
     /* --------------------------------------------------------------------
      * 2. MOBILE NAVIGATION TOGGLER  (hamburger ⇄ close icon)
@@ -22,13 +30,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const navToggle = document.getElementById('nav-toggle'); // button element
     const navbar    = document.getElementById('navbar');     // ul/nav container
 
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-controls', 'navbar');
+
     navToggle.addEventListener('click', () => {
         /* Toggle .open on <nav> for CSS slide-in/out  ------------------- */
-        navbar.classList.toggle('open');
+        const isOpen = navbar.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 
         /* Swap the Font Awesome icon class for visual feedback ---------- */
         const icon = navToggle.querySelector('i');
-        if (navbar.classList.contains('open')) {
+        if (isOpen) {
             icon.classList.remove('fa-bars');
             icon.classList.add   ('fa-xmark');  // “X” icon when menu open
         } else {
@@ -41,11 +53,51 @@ document.addEventListener("DOMContentLoaded", () => {
     navbar.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             navbar.classList.remove('open');           // hide menu
+            navToggle.setAttribute('aria-expanded', 'false');
             const icon = navToggle.querySelector('i'); // reset icon
             icon.classList.add   ('fa-bars');
             icon.classList.remove('fa-xmark');
         });
     });
+
+    const backToTop = document.getElementById('back-to-top');
+    const toggleBackToTop = () => {
+        if (window.scrollY > 400) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    };
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    window.addEventListener('scroll', toggleBackToTop);
+    toggleBackToTop();
+
+    /* Update active navigation links as sections enter the viewport */
+    const sections = document.querySelectorAll('main section[id]');
+    const navLinks = document.querySelectorAll('#navbar a');
+
+    const updateActiveNav = (targetId) => {
+        navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${targetId}`);
+        });
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
+                updateActiveNav(entry.target.id);
+            }
+        });
+    }, {
+        threshold: [0.35],
+        rootMargin: '-30% 0px -60% 0px'
+    });
+
+    sections.forEach(section => sectionObserver.observe(section));
 
     /* --------------------------------------------------------------------
      * 3. FULL-SCREEN (LIGHTBOX) IMAGE VIEWER
@@ -77,6 +129,23 @@ document.addEventListener("DOMContentLoaded", () => {
         modalImg.src = ''; // Reset src so next open doesn’t flash old image
     });
 
+    /* Close modal or mobile navigation when Escape key is pressed */
+    window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            if (modal.classList.contains('active')) {
+                modal.classList.remove('active');
+                modalImg.src = '';
+            }
+            if (navbar.classList.contains('open')) {
+                navbar.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                const icon = navToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
+            }
+        }
+    });
+
     /* Also close modal if user clicks the darkened background itself
      * (but not if they click the image).
      */
@@ -87,27 +156,67 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* --------------------------------------------------------------------
-     * 4. BROKEN IMAGE FALLBACK
+     * 4. IMAGE CAROUSELS
+     * ------------------------------------------------------------------ */
+    document.querySelectorAll('.image-carousel').forEach(carousel => {
+        const track = carousel.querySelector('.carousel-track');
+        const items = Array.from(carousel.querySelectorAll('.carousel-item'));
+        const prevBtn = carousel.querySelector('.carousel-btn-prev');
+        const nextBtn = carousel.querySelector('.carousel-btn-next');
+        let currentIndex = 0;
+
+        if (!track || !items.length || !prevBtn || !nextBtn) return;
+
+        const getVisibleItems = () => {
+            const visible = getComputedStyle(carousel).getPropertyValue('--carousel-visible-items');
+            return Number.parseInt(visible, 10) || 1;
+        };
+
+        const updateCarousel = () => {
+            const maxIndex = Math.max(items.length - getVisibleItems(), 0);
+            currentIndex = Math.min(currentIndex, maxIndex);
+            track.style.transform = `translateX(-${items[currentIndex].offsetLeft}px)`;
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = maxIndex === 0;
+        };
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = Math.max(currentIndex - 1, 0);
+            updateCarousel();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const maxIndex = Math.max(items.length - getVisibleItems(), 0);
+            currentIndex = currentIndex === maxIndex ? 0 : currentIndex + 1;
+            updateCarousel();
+        });
+
+        window.addEventListener('resize', updateCarousel);
+        updateCarousel();
+    });
+
+    /* --------------------------------------------------------------------
+     * 5. BROKEN IMAGE FALLBACK
      * Replaces any <img> that fails to load with a placeholder.
      * Also disables zooming for that element since the asset is missing.
      * ------------------------------------------------------------------ */
     document.querySelectorAll('img').forEach(img => {
         img.addEventListener('error', function () {
             this.src = 'assets/img/wikimedia-noimg-500px.svg'; // fallback
-            this.style.border = '1px solid white';              // visual debug
+            this.classList.add('img-fallback');                // flag for CSS theming
             this.parentElement.classList.remove('zoomable');   // disable zoom
         });
 
         // Handle images that already failed before this listener was attached
         if (img.complete && img.naturalWidth === 0 && img.src !== '') {
             img.src = 'assets/img/wikimedia-noimg-500px.svg'; // fallback
-            img.style.border = '1px solid white';
+            img.classList.add('img-fallback');
             img.parentElement.classList.remove('zoomable');
         }
     });
 
     /* --------------------------------------------------------------------
-     * 5. TAB SWITCHER LOGIC
+     * 6. TAB SWITCHER LOGIC
      * Handles switching active states for buttons and panes, and updates
      * viewport focus seamlessly.
      * ------------------------------------------------------------------ */
@@ -122,10 +231,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (targetPane) {
                     // Deactivate all buttons in this tab group
                     buttons.forEach(b => b.classList.remove('active'));
-                    // Deactivate all panes in the related container
-                    const parentContainer = targetPane.parentElement;
-                    const panes = parentContainer.querySelectorAll('.tab-pane');
-                    panes.forEach(pane => pane.classList.remove('active'));
+                    // Resolve the pane container explicitly to avoid relying on
+                    // parentElement, which breaks if wrapper divs are ever added.
+                    const paneContainer = targetPane.closest('.tab-content-container');
+                    if (paneContainer) {
+                        paneContainer.querySelectorAll('.tab-pane')
+                            .forEach(pane => pane.classList.remove('active'));
+                    }
                     
                     // Activate this button & pane
                     btn.classList.add('active');
@@ -149,10 +261,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Click it to trigger the tab switch logic
                 targetBtn.click();
                 
-                // Scroll to the parent section wrapper so user sees the section title
-                const parentSection = targetPane.closest('section');
-                if (parentSection) {
-                    parentSection.scrollIntoView({ behavior: 'smooth' });
+                // Scroll to the tab-control bar (not the full section) so the
+                // active pane content is visible even with a fixed header.
+                // Using scrollIntoView on the control row + a manual offset avoids
+                // landing the content beneath the sticky nav.
+                const tabControl = targetBtn.closest('.tab-control');
+                const scrollTarget = tabControl || targetPane.closest('section');
+                if (scrollTarget) {
+                    scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Nudge up by header height (~80px) so the tab bar clears the nav
+                    setTimeout(() => window.scrollBy({ top: -80, behavior: 'smooth' }), 400);
                 }
             }
         }

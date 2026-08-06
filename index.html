@@ -4,25 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brent Abenir | Portfolio</title>
+    <meta name="description" content="Brent Abenir portfolio showcasing coding projects, design work, certifications, and professional experience.">
+    <meta name="keywords" content="Brent Abenir, portfolio, web developer, graphic designer, JavaScript, HTML, CSS, PHP, MySQL, Photoshop">
+    <meta name="author" content="Brent Kyrjeh L. Abenir">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Brent Abenir | Portfolio">
+    <meta property="og:description" content="Portfolio showcasing coding projects, certifications, and graphic design work by Brent Abenir.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/img/about-img/img.JPG">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Brent Abenir | Portfolio">
+    <meta name="twitter:description" content="Portfolio showcasing coding projects, certifications, and graphic design work by Brent Abenir.">
+    <meta name="twitter:image" content="assets/img/about-img/img.JPG">
+    <meta name="theme-color" content="#0019b3">
     <link rel="icon" href="public/favicon.png" type="image/png">
-    <!-- font awesome - icons (includes brands) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
-    <!-- devicon - developer icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <!-- font awesome 6.7.2 - icons (includes brands) -->
+    <!-- FA 7 is not on cdnjs; 6.7.2 is latest available and covers all icons used here -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer">
+    <!-- devicon 2.17.0 - developer icons (pinned version, not @latest) -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css"
+          integrity="sha512-6/05LVs+grXBAu5XzdiMFB64yCVF9FL70zWrTKcaTEKygrO7fC5LqfL/SKPpuRpimL2aE0D7Hw/NoED+7+7/VQ=="
+          crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div id="loading">
         <div class="spinner"></div>
     </div>
 
-    <button type="button" id="nav-toggle" aria-label="Toggle Navigation">
+    <button type="button" id="nav-toggle" aria-label="Toggle navigation" aria-controls="navbar" aria-expanded="false">
         <i class="fa-solid fa-bars"></i>
     </button>
 
     <header class="header">
-        <nav id="navbar">
+        <nav id="navbar" aria-label="Primary navigation">
             <a href="#about">About</a>
             <a href="#assets">Assets</a>
             <a href="#certificates">Certificates</a>
@@ -30,7 +50,6 @@
             <a href="#attendance">Attendance</a>
             <a href="#contact">Contact</a>
         </nav>
-        <!-- upcoming update: separate by "code" and "art" -->
     </header>
 
     <main>
@@ -52,16 +71,16 @@
 
         <div class="container">
             <section id="about" class="section-padding">
-                <small class="update-tag">Update: 04-Jun-2026</small>
+                <small class="update-tag">Update: 06-Aug-2026</small>
                 <br>
-                <code>v2026.07.12</code>
+                <code>v2026.08.06</code>
                 <h2 class="section-title">About Me</h2>
                 
                 <div class="about-grid">
                     <div class="about-text">
                         <h2>BRENT KYRJEH L. ABENIR</h2>
                         <p>
-                            Upcoming graduate from <i>CITE Technical Institute, Inc.</i>, soon holding a <strong>Diploma in Computer Engineering (DICE)</strong>. 
+                            Graduate from <i>CITE Technical Institute, Inc.</i>, holding a <strong>Diploma in Computer Engineering Technology</strong>. 
                         </p>
                         <br>
                         <p>
@@ -243,7 +262,7 @@
         
                             <div class="card">
                                 <div class="card-image zoomable">
-                                    <img src="assets/img/assets-img/minebea.jpg" data-full="assets/img/certificates-img/minebea-2024.jpg" alt="TESDA CSS NCII">
+                                    <img src="assets/img/assets-img/tesda-css.jpg" data-full="assets/img/certificates-img/tesda-css-full.jpg" alt="TESDA CSS NCII">
                                 </div>
                                 <div class="card-content">
                                     <h3>
@@ -254,7 +273,7 @@
         
                             <div class="card">
                                 <div class="card-image zoomable">
-                                    <img src="assets/img/assets-img/minebea.jpg" data-full="assets/img/certificates-img/minebea-2024.jpg" alt="TESDA EPAS NCII">
+                                    <img src="assets/img/assets-img/tesda-epas.jpg" data-full="assets/img/certificates-img/tesda-epas-full.jpg" alt="TESDA EPAS NCII">
                                 </div>
                                 <div class="card-content">
                                     <h3>
@@ -265,7 +284,7 @@
         
                             <div class="card">
                                 <div class="card-image zoomable">
-                                    <img src="assets/img/assets-img/minebea.jpg" data-full="assets/img/certificates-img/minebea-2024.jpg" alt="TESDA ANIM NCIII">
+                                    <img src="assets/img/assets-img/tesda-anim.jpg" data-full="assets/img/certificates-img/tesda-anim-full.jpg" alt="TESDA ANIM NCIII">
                                 </div>
                                 <div class="card-content">
                                     <h3>
@@ -296,18 +315,22 @@
                         <div class="card-grid portfolio-grid">
                             <div class="card">
                                 <div class="card-image">
-                                    <img src="assets/img/code-project-img/portfolio-v3-feb2026.PNG" alt="Portfolio Page Current">
+                                    <img src="assets/img/code-project-img/portfolio-v3-aug2026.PNG" alt="Portfolio Page Current">
                                 </div>
                                 <div class="card-content">
                                     <h3>Portfolio Page</h3>
                                     <h5><i>Tech Stack: Native (HTML, CSS, Babel JS)</i></h5>
                                     <br>
                                     <div class="btn-group">
-                                        <a class="btn sm outline" disabled title="You're looking at it now, silly~">
+                                        <a class="btn sm outline"
+                                           aria-disabled="true"
+                                           tabindex="-1"
+                                           title="You're looking at it now, silly~"
+                                           disabled>
                                             View
                                         </a>
                                         <a href="https://github.com/kajieAbenir/kajieabenir.github.io" class="btn sm outline">
-                                            Code (v3.0 Native)
+                                            Repository
                                         </a>
                                     </div>
                                 </div>
@@ -328,7 +351,7 @@
                                             View Website
                                         </a>
                                         <a href="https://github.com/kajieAbenir/genshin-chat" class="btn sm outline">
-                                            Code (ver 1.1)
+                                            Repository
                                         </a>
                                     </div>
                                 </div>
@@ -348,7 +371,7 @@
                                             View
                                         </a>
                                         <a href="https://github.com/kajieAbenir/login-with" class="btn sm outline">
-                                            Code
+                                            Repository
                                         </a>
                                     </div>
                                 </div>
@@ -368,7 +391,7 @@
                                             View
                                         </a>
                                         <a href="https://github.com/kajieAbenir/year-progress-bar" class="btn sm outline">
-                                            Code
+                                            Repository
                                         </a>
                                     </div>
                                 </div>
@@ -392,10 +415,10 @@
                                     <br>
                                     <div class="btn-group">
                                         <a href="https://github.com/kajieAbenir/portfolio-webpage-02152024" class="btn sm outline">
-                                            Code (v1 Legacy Native)
+                                            Repository (v1 Legacy Native)
                                         </a>
                                         <a href="https://github.com/kajieAbenir/portfolio-tsx" class="btn sm outline">
-                                            Code (v2 Legacy TSX)
+                                            Repository (v2 Legacy TSX)
                                         </a>
                                     </div>
                                 </div>
@@ -414,7 +437,7 @@
                                     <br>
                                     <div class="btn-group">
                                         <a href="https://github.com/kajieAbenir/c-gacha-simulator" class="btn sm outline">
-                                            Code
+                                            Repository
                                         </a>
                                     </div>
                                 </div>
@@ -435,7 +458,7 @@
                                             href="https://github.com/kajieAbenir/collatz-conjecture-simulation" 
                                             class="btn sm outline"
                                         >
-                                            Code
+                                            Repository
                                         </a>
                                     </div>
                                 </div>
@@ -455,7 +478,7 @@
                                             View
                                         </a>
                                         <a href="https://github.com/kajieAbenir/html-simple-calendar-01312024" class="btn sm outline">
-                                            Code
+                                            Repository
                                         </a>
                                     </div>
                                 </div>
@@ -475,7 +498,7 @@
                                             View
                                         </a>
                                         <a href="https://github.com/kajieAbenir/random-date-generator" class="btn sm outline">
-                                            Code
+                                            Repository
                                         </a>
                                     </div>
                                 </div>
@@ -489,12 +512,32 @@
                         <h5>Click on each picture to zoom in.</h5>
                         <br>
                         <h4>CITE Sportsfest 2024 - Facebook Profile Frame Blast</h4>
-                        <div class="masonry-grid design-grid" id="sportsfest-grid">
-                            <img src="assets/img/cpc-img/sportsfest/com-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/sample.png" alt="Sportsfest Com.E Frame Blast Design">
-                            <img src="assets/img/cpc-img/sportsfest/mech-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/mech-frame.png" alt="Sportsfest Mech.E Frame Blast Design">
-                            <img src="assets/img/cpc-img/sportsfest/elec-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/elec-frame.png" alt="Sportsfest Elec.E Frame Blast Design">
-                            <img src="assets/img/cpc-img/sportsfest/elex-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/elex-frame.png" alt="Sportsfest Elex.E Frame Blast Design">
-                            <img src="assets/img/cpc-img/sportsfest/general-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/general-frame.png" alt="Sportsfest General Frame Blast Design">
+                        <div class="image-carousel carousel-visible-5 carousel-mobile-visible-2" id="sportsfest-carousel" aria-label="Sportsfest frame blast carousel">
+                            <button class="carousel-btn carousel-btn-prev" type="button" aria-label="Previous Sportsfest frame">
+                                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                            </button>
+                            <div class="carousel-viewport">
+                                <div class="carousel-track">
+                                    <div class="carousel-item carousel-image">
+                                        <img src="assets/img/cpc-img/sportsfest/com-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/sample.png" alt="Sportsfest Com.E Frame Blast Design">
+                                    </div>
+                                    <div class="carousel-item carousel-image">
+                                        <img src="assets/img/cpc-img/sportsfest/mech-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/mech-frame.png" alt="Sportsfest Mech.E Frame Blast Design">
+                                    </div>
+                                    <div class="carousel-item carousel-image">
+                                        <img src="assets/img/cpc-img/sportsfest/elec-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/elec-frame.png" alt="Sportsfest Elec.E Frame Blast Design">
+                                    </div>
+                                    <div class="carousel-item carousel-image">
+                                        <img src="assets/img/cpc-img/sportsfest/elex-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/elex-frame.png" alt="Sportsfest Elex.E Frame Blast Design">
+                                    </div>
+                                    <div class="carousel-item carousel-image">
+                                        <img src="assets/img/cpc-img/sportsfest/general-frame.png" class="zoomable" data-full="assets/img/cpc-img/sportsfest/general-frame.png" alt="Sportsfest General Frame Blast Design">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-btn carousel-btn-next" type="button" aria-label="Next Sportsfest frame">
+                                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                            </button>
                         </div>
                         <br>
                         <h4>CITE Photography Club Announcements & Infographics</h4>
@@ -508,20 +551,37 @@
                         <h4>FB Cover Photo Commission - Archer / Shirou Emiya</h4>
                         <h5> Concept Designs </h5>
                         <div class="masonry-grid design-grid" id="archer-photo-grid">
-                            <img src="assets/img/zyrusz-img/archer-highlight-img/watermarked d1.png" class="zoomable" data-full="assets/img/zyrusz-img/archer-highlight-img/watermarked d1.png" alt="Archer Cover Design Concept 1">
-                            <img src="assets/img/zyrusz-img/archer-highlight-img/watermarked d2.png" class="zoomable" data-full="assets/img/zyrusz-img/archer-highlight-img/watermarked d2.png" alt="Archer Cover Design Concept 2">
+                            <img src="assets/img/zyrusz-img/archer-highlight-img/watermarked d2.png" class="zoomable" data-full="assets/img/zyrusz-img/archer-highlight-img/watermarked d2.png" alt="Archer Cover Design Concept">
                         </div>
                         <br>
                         <h4>Cosplay Card Designing</h4>
-                        <div class="masonry-grid design-grid" id="coscard-grid">
-                            <img src="assets/img/zyrusz-img/coscard-img/aven front.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/aven front.png" alt="Aven Cosplay Card Front">
-                            <img src="assets/img/zyrusz-img/coscard-img/aven back.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/aven back.png" alt="Aven Cosplay Card Back">
-                            <img src="assets/img/zyrusz-img/coscard-img/dr ratio front.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/dr ratio front.png" alt="Dr. Ratio Cosplay Card Front">
-                            <img src="assets/img/zyrusz-img/coscard-img/dr ratio back.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/dr ratio back.png" alt="Dr. Ratio Cosplay Card Back">
-                            <img src="assets/img/zyrusz-img/coscard-img/thoma front.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/thoma front.png" alt="Thoma Cosplay Card Front">
-                            <img src="assets/img/zyrusz-img/coscard-img/thoma back.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/thoma back.png" alt="Thoma Cosplay Card Back">
-                            <img src="assets/img/zyrusz-img/coscard-img/bk_abenir FRONT.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/bk_abenir FRONT.png" alt="Bk_Abenir Image Card Front">
-                            <img src="assets/img/zyrusz-img/coscard-img/bk_abenir BACK.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/bk_abenir BACK.png" alt="Bk_Abenir Image Card Back">
+                        <div class="image-carousel coscard-carousel carousel-visible-2 carousel-mobile-visible-1" id="coscard-carousel" aria-label="Cosplay card carousel">
+                            <button class="carousel-btn carousel-btn-prev" type="button" aria-label="Previous cosplay card pair">
+                                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                            </button>
+                            <div class="carousel-viewport">
+                                <div class="carousel-track">
+                                    <div class="carousel-item coscard-pair">
+                                        <img src="assets/img/zyrusz-img/coscard-img/aven front.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/aven front.png" alt="Aven Cosplay Card Front">
+                                        <img src="assets/img/zyrusz-img/coscard-img/aven back.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/aven back.png" alt="Aven Cosplay Card Back">
+                                    </div>
+                                    <div class="carousel-item coscard-pair">
+                                        <img src="assets/img/zyrusz-img/coscard-img/dr ratio front.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/dr ratio front.png" alt="Dr. Ratio Cosplay Card Front">
+                                        <img src="assets/img/zyrusz-img/coscard-img/dr ratio back.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/dr ratio back.png" alt="Dr. Ratio Cosplay Card Back">
+                                    </div>
+                                    <div class="carousel-item coscard-pair">
+                                        <img src="assets/img/zyrusz-img/coscard-img/thoma front.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/thoma front.png" alt="Thoma Cosplay Card Front">
+                                        <img src="assets/img/zyrusz-img/coscard-img/thoma back.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/thoma back.png" alt="Thoma Cosplay Card Back">
+                                    </div>
+                                    <div class="carousel-item coscard-pair">
+                                        <img src="assets/img/zyrusz-img/coscard-img/bk_abenir FRONT.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/bk_abenir FRONT.png" alt="Bk_Abenir Image Card Front">
+                                        <img src="assets/img/zyrusz-img/coscard-img/bk_abenir BACK.png" class="zoomable" data-full="assets/img/zyrusz-img/coscard-img/bk_abenir BACK.png" alt="Bk_Abenir Image Card Back">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-btn carousel-btn-next" type="button" aria-label="Next cosplay card pair">
+                                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                            </button>
                         </div>
                         <br>
                         <h4>Other Designs</h4>
@@ -572,6 +632,10 @@
             </address>
         </div>
     </footer>
+
+    <button id="back-to-top" type="button" aria-label="Back to top">
+        <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+    </button>
 
     <div id="fullscreen-modal" class="fullscreen hidden">
         <button class="close-modal">&times;</button>
