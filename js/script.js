@@ -239,6 +239,10 @@ document.addEventListener("DOMContentLoaded", () => {
                             .forEach(pane => pane.classList.remove('active'));
                     }
                     
+                    // Force a layout pass while the pane is hidden so its
+                    // slide-up animation restarts on every view change.
+                    void targetPane.offsetWidth;
+
                     // Activate this button & pane
                     btn.classList.add('active');
                     targetPane.classList.add('active');
