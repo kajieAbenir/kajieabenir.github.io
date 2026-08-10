@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--
+        SEO & metadata section.
+        These tags help search engines understand the page and improve how it appears in search results,
+        social previews, and browser indexing.
+    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brent Kyrjeh L. Abenir | Computer Engineer & Graphic Designer Portfolio</title>
-    <meta name="description" content="Brent Kyrjeh L. Abenir is a Computer Engineering Technology graduate and creative developer showcasing coding projects, graphic design work, certifications, and professional experience.">
-    <meta name="keywords" content="Brent Kyrjeh L. Abenir, portfolio, computer engineer, graphic designer, web developer, JavaScript, HTML, CSS, PHP, MySQL, Photoshop, CITE Technical Institute">
+    <meta http-equiv="Content-Language" content="en">
+    <title>Brent Abenir | Digital Artist</title>
+    <meta name="description" content="Brent Kyrjeh L. Abenir is a Computer Engineering Technology graduate, web developer, and graphic designer showcasing coding projects, design work, certifications, and professional experience in Cebu, Philippines.">
+    <meta name="keywords" content="Brent Kyrjeh L. Abenir, Brent Abenir portfolio, computer engineer portfolio, graphic designer portfolio, web developer, HTML CSS JavaScript, PHP MySQL, Adobe Photoshop, CITE Technical Institute, Cebu, Philippines, computer engineering technology">
     <meta name="author" content="Brent Kyrjeh L. Abenir">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="color-scheme" content="dark light">
+    <meta name="format-detection" content="telephone=no">
     <meta name="canonical" content="https://kajieabenir.github.io/">
+    <!-- Open Graph / social sharing metadata for Facebook, LinkedIn, and other platforms -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Brent Kyrjeh L. Abenir | Computer Engineer & Graphic Designer Portfolio">
-    <meta property="og:description" content="Portfolio of Brent Kyrjeh L. Abenir featuring coding projects, certifications, and graphic design work.">
+    <meta property="og:description" content="Computer Engineering Technology graduate and creative developer portfolio featuring coding projects, certifications, design work, and technical expertise.">
     <meta property="og:url" content="https://kajieabenir.github.io/">
-    <meta property="og:image" content="assets/img/about-img/img.JPG">
+    <meta property="og:image" content="https://kajieabenir.github.io/assets/img/about-img/img.JPG">
+    <meta property="og:image:alt" content="Brent Kyrjeh L. Abenir portrait">
     <meta property="og:site_name" content="Brent Abenir Portfolio">
     <meta property="og:locale" content="en_US">
+    <!-- Twitter card metadata for richer card previews on X/Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Brent Abenir | Computer Engineer & Graphic Designer Portfolio">
-    <meta name="twitter:description" content="Portfolio of Brent Abenir featuring coding projects, certifications, and graphic design work.">
-    <meta name="twitter:image" content="assets/img/about-img/img.JPG">
+    <meta name="twitter:title" content="Brent Kyrjeh L. Abenir | Computer Engineer & Graphic Designer Portfolio">
+    <meta name="twitter:description" content="Portfolio of Brent Kyrjeh L. Abenir featuring coding projects, certifications, and graphic design work.">
+    <meta name="twitter:image" content="https://kajieabenir.github.io/assets/img/about-img/img.JPG">
+    <meta name="twitter:site" content="@kajieabenir">
     <link rel="icon" href="public/favicon.png" type="image/png">
     <link rel="canonical" href="https://kajieabenir.github.io/">
+    <!-- External asset preloading for fonts/icons to improve performance and reduce layout shift -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <!-- font awesome 6.7.2 - icons (includes brands) -->
@@ -37,6 +50,7 @@
           integrity="sha512-6/05LVs+grXBAu5XzdiMFB64yCVF9FL70zWrTKcaTEKygrO7fC5LqfL/SKPpuRpimL2aE0D7Hw/NoED+7+7/VQ=="
           crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <!-- Structured data (JSON-LD) for rich search results and profile recognition by search engines -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -46,18 +60,30 @@
       "url": "https://kajieabenir.github.io/",
       "email": "mailto:brentabenir.2023@gmail.com",
       "alumniOf": "CITE Technical Institute, Inc.",
+      "sameAs": [
+        "https://github.com/kajieAbenir"
+      ],
       "knowsAbout": [
         "Web Development",
+        "Frontend Development",
         "HTML",
         "CSS",
         "JavaScript",
+        "PHP",
+        "MySQL",
         "Graphic Design",
-        "Computer Engineering"
-      ]
+        "Adobe Photoshop",
+        "Computer Engineering Technology"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Computer Engineer & Graphic Designer"
+      }
     }
     </script>
 </head>
 <body>
+    <!-- Page loader overlay for a smoother initial experience -->
     <div id="loading">
         <div class="spinner"></div>
     </div>
@@ -67,6 +93,7 @@
     </button>
 
     <header class="header">
+        <!-- Main site navigation for quick access to the portfolio sections -->
         <nav id="navbar" aria-label="Primary navigation">
             <a href="#about">About</a>
             <a href="#assets">Assets</a>
@@ -78,6 +105,7 @@
     </header>
 
     <main>
+        <!-- Hero section: first impression and brand identity -->
         <section id="home" class="hero-section" aria-labelledby="hero-title">
             <div class="hero-header-image" aria-hidden="true"></div>
             <div class="hero-content">
@@ -88,10 +116,11 @@
         </section>
 
         <div class="container">
+            <!-- About section: personal profile, educational background, and technical strengths -->
             <section id="about" class="section-padding">
-                <small class="update-tag">Update: 06-Aug-2026</small>
+                <small class="update-tag">Update: 08-Aug-2026</small>
                 <br>
-                <code>v2026.08.06</code>
+                <code>v2026.08.08</code>
                 <h2 class="section-title">About Me</h2>
                 
                 <div class="about-grid">
