@@ -301,6 +301,177 @@ hr {
 }
 
 /* =========================================
+   6. EXPERIENCE TIMELINE
+   ========================================= */
+.timeline-container {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px dashed var(--surface-border);
+}
+
+.timeline-container .subsection-title {
+    font-size: 1.8rem;
+    color: var(--surface-strong);
+    margin-bottom: 10px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto 0;
+    text-align: left;
+}
+
+/* Vertical connecting line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 108px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--brand-25);
+}
+
+.timeline-item {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    margin-bottom: 44px;
+    position: relative;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Date badge pill */
+.timeline-badge {
+    flex-shrink: 0;
+    width: 100px;
+    background: var(--surface-hero);
+    color: var(--white);
+    font-family: var(--font-main);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04rem;
+    text-align: center;
+    padding: 5px 8px;
+    border-radius: 30px;
+    border: 1px solid var(--brand-700);
+    line-height: 1.3;
+    margin-top: 4px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Dot on the vertical line */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 104px;
+    top: 14px;
+    width: 10px;
+    height: 10px;
+    background: var(--brand-500);
+    border-radius: 50%;
+    border: 2px solid var(--surface);
+    z-index: 2;
+}
+
+.timeline-content {
+    flex: 1;
+    padding: 18px 22px;
+    background: var(--surface-subtle);
+    border: 1px solid var(--surface-border);
+    border-radius: 10px;
+    transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-3px);
+    background: var(--timeline-hover-bg, var(--surface-subtle));
+    color: var(--timeline-hover-text, var(--text));
+    box-shadow: 0 8px 24px var(--brand-shadow);
+}
+
+.timeline-content:hover .timeline-label,
+.timeline-content:hover .timeline-title,
+.timeline-content:hover .timeline-org,
+.timeline-content:hover .timeline-desc {
+    color: var(--timeline-hover-text, var(--text));
+}
+
+#timeline-education {
+    --timeline-hover-bg: #82e1fe;
+    --timeline-hover-text: #061b2d;
+}
+
+#timeline-club {
+    --timeline-hover-bg: #ffe066;
+    --timeline-hover-text: #2c2100;
+}
+
+#timeline-internship {
+    --timeline-hover-bg: #122e60;
+    --timeline-hover-text: var(--white);
+}
+
+#timeline-freelance {
+    --timeline-hover-bg: #41005d;
+    --timeline-hover-text: var(--white);
+}
+
+#timeline-callcenter {
+    --timeline-hover-bg: #a78bfa;
+    --timeline-hover-text: #24194d;
+}
+
+#timeline-ustore-swu {
+    --timeline-hover-bg: #7c0000;
+    --timeline-hover-text: var(--white);
+}
+
+
+/* Italic cursive-style milestone label (like Cruip's "The origin" etc.) */
+.timeline-label {
+    display: block;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    color: var(--brand-500);
+    font-size: 0.92rem;
+    margin-bottom: 6px;
+}
+
+.timeline-title {
+    font-family: var(--font-header);
+    font-size: 1.05rem;
+    color: var(--surface-strong);
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.timeline-org {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.timeline-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 600px) {
+    .timeline::before { left: 0; }
+    .timeline-item { flex-direction: column; gap: 10px; padding-left: 18px; }
+    .timeline-item::after { left: -5px; top: 6px; }
+    .timeline-badge { width: auto; align-self: flex-start; }
+}
+
+/* =========================================
    8. SPECIALTIES & TECH STACK
    ========================================= */
 .specialties-container {
