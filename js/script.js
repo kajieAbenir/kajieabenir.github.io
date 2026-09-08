@@ -196,6 +196,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* --------------------------------------------------------------------
+     * 4b. HORIZONTAL TIMELINE CAROUSEL
+     * ------------------------------------------------------------------ */
+    document.querySelectorAll('.timeline').forEach(timeline => {
+        const prevBtn = timeline.parentElement.querySelector('.carousel-btn-prev');
+        const nextBtn = timeline.parentElement.querySelector('.carousel-btn-next');
+        if (!prevBtn || !nextBtn) return;
+
+        const updateTimelineButtons = () => {
+            const tolerance = 2;
+            prevBtn.disabled = timeline.scrollLeft <= tolerance;
+            nextBtn.disabled = timeline.scrollLeft + timeline.clientWidth >= timeline.scrollWidth - tolerance;
+        };
+
+        prevBtn.addEventListener('click', () => {
+            const item = timeline.querySelector('.timeline-item');
+            if (!item) return;
+            const gap = parseFloat(getComputedStyle(timeline).gap) || 30;
+            timeline.scrollBy({ left: -(item.offsetWidth + gap), behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const item = timeline.querySelector('.timeline-item');
+            if (!item) return;
+            const gap = parseFloat(getComputedStyle(timeline).gap) || 30;
+            timeline.scrollBy({ left: item.offsetWidth + gap, behavior: 'smooth' });
+        });
+
+        timeline.addEventListener('scroll', updateTimelineButtons);
+        window.addEventListener('resize', updateTimelineButtons);
+        updateTimelineButtons();
+    });
+
+    /* --------------------------------------------------------------------
      * 5. BROKEN IMAGE FALLBACK
      * Replaces any <img> that fails to load with a placeholder.
      * Also disables zooming for that element since the asset is missing.
