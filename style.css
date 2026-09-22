@@ -856,9 +856,64 @@ hr {
 .btn:active { transform: translateY(0) scale(0.97); }
 .btn[disabled] { opacity: 0.5; cursor: not-allowed; }
 
+.btn-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.btn-group .btn {
+    font: inherit;
+}
+
 /* =========================================
    7. PORTFOLIO GALLERIES / MASONRY / CAROUSELS
    ========================================= */
+.portfolio-video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
+
+.portfolio-video-grid > div {
+    min-width: 0;
+}
+
+.portfolio-video-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.portfolio-video-title {
+    margin: 0;
+    color: var(--surface-strong);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.portfolio-video-grid iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+}
+
+.iframe-container {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.iframe-container img {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--surface-border);
+    border-radius: 8px;
+    box-shadow: 0 8px 20px var(--brand-shadow);
+}
+
 .masonry-grid { column-count: 3; padding: 10px; }
 
 .masonry-grid img {
@@ -876,9 +931,74 @@ hr {
     box-shadow: 0 10px 18px rgba(0, 0, 0, 0.25);
 }
 
-.masonry-grid.design-grid { column-count: 5; }
-#cpc-design-grid { column-count: 3; }
-#archer-photo-grid { column-count: 1; }
+.masonry-grid.design-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
+
+.masonry-grid.design-grid img {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    object-fit: contain;
+}
+
+/* The Archer cover is a single panoramic design, so it gets its own one-column grid. */
+#archer-photo-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    margin: 0;
+}
+
+#archer-photo-grid img {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 0;
+}
+
+/* Keep the first and fourth CITE designs together without a grid-row gap. */
+#cpc-design-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+#cpc-design-grid .cpc-design-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+#cpc-design-grid img {
+    width: 100%;
+    margin-bottom: 0;
+    margin-bottom: 10px;
+        border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .masonry-grid.design-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #cpc-design-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .masonry-grid.design-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #cpc-design-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 .image-carousel {
     --carousel-visible-items: 1;
@@ -918,6 +1038,17 @@ hr {
 }
 
 .carousel-image img { aspect-ratio: 1 / 1; }
+
+.yearbook-note {
+    margin: 0;
+    color: var(--text-muted, #666);
+    font-size: 0.92rem;
+}
+
+.graduates-carousel { margin-top: 12px; }
+.graduates-carousel img { aspect-ratio: 1 / 1.5; }
+
+.yearbook-note { text-align: center; }
 
 .coscard-pair {
     display: grid;
@@ -966,18 +1097,6 @@ hr {
     color: var(--surface-strong);
 }
 
-#other-design-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-#other-design-grid img {
-    width: 220px;
-    margin-bottom: 0;
-}
-
 iframe {
     width: 100%;
     height: 400px;
@@ -987,6 +1106,10 @@ iframe {
 }
 
 @media screen and (max-width: 768px) {
+    .portfolio-video-grid {
+        grid-template-columns: 1fr;
+    }
+
     .masonry-grid { column-count: 2; align-content: center; }
     .masonry-grid.design-grid { column-count: 2; }
     #cpc-design-grid { column-count: 2; }
@@ -1006,6 +1129,7 @@ iframe {
         width: 38px;
         height: 38px;
     }
+
 }
 
 @media screen and (max-width: 480px) {
